@@ -29,9 +29,9 @@ assets/
   js/calculator-model.js                Parâmetros e cálculos puros
   js/calculator.js                      Formulário e resultados
   images/                               Marca NEIVA e ícones oficiais Microsoft
-scripts/                                Prévia, verificação e preparação de deploy
+scripts/                                Prévia e verificação do site
 tests/                                  Testes numéricos e de navegador
-.github/workflows/pages.yml             Validação e publicação
+.github/workflows/validate.yml          Validação manual opcional
 ```
 
 O site usa **HTML, CSS e JavaScript estáticos**, sem framework, backend ou geração obrigatória de páginas. As dependências npm são usadas apenas na manutenção e nos testes. Não são enviadas para o navegador.
@@ -64,15 +64,15 @@ npm.cmd run test:browser
 
 As verificações cobrem links, assets, fragmentos e prefixo Pages; preservação de parâmetros e fórmulas; dimensões do guia; teclado, persistência e interações; temas, contraste e semântica; larguras de 320 a 1440 pixels; impressão/PDF.
 
-Relatórios, capturas e PDFs de teste são ignorados pelo Git. O workflow instala o navegador e suas dependências no runner, sem exigir configuração adicional no computador de quem acessa o site.
+Relatórios, capturas e PDFs de teste são ignorados pelo Git. Quando o serviço estiver disponível na conta, o workflow opcional **Validate portal** pode executar as mesmas verificações no GitHub Actions. Ele instala o navegador e suas dependências no runner, sem exigir configuração adicional no computador de quem acessa o site.
 
 ## Publicação
 
-O GitHub Pages usa **GitHub Actions**, não uma branch `gh-pages`. Atualizações de `main` executam as verificações e publicam o site somente após aprovação dos testes. Pull requests executam as verificações, sem publicar.
+O GitHub Pages usa a publicação nativa **Deploy from a branch**, com origem na **branch `main`, pasta `/`**. Cada atualização de `main` publica os arquivos estáticos automaticamente. O arquivo `.nojekyll` evita o processamento do conteúdo com Jekyll.
 
-O script `npm.cmd run stage` prepara `_site` com as páginas, assets e avisos legais. Não transforma o conteúdo: apenas copia os arquivos públicos. Dependências, testes, scripts de manutenção e artefatos locais ficam fora da publicação.
+Execute as verificações locais antes de enviar mudanças. A publicação não depende de um build npm ou do workflow personalizado de validação; a documentação, os testes e os scripts de desenvolvimento já são públicos no repositório, mas não são carregados pelo navegador para executar o portal. Dependências instaladas e artefatos locais permanecem ignorados pelo Git.
 
-Em **Settings → Pages**, a origem deve ser **GitHub Actions**. O workflow também pode ser iniciado manualmente em **Actions → Validate and publish portal**.
+Em **Settings → Pages**, mantenha **Deploy from a branch → main → / (root)**. Não selecione GitHub Actions como origem sem configurar um workflow de publicação correspondente. A validação opcional pode ser iniciada em **Actions → Validate portal → Run workflow** e não altera o site publicado.
 
 `404.html` trata endereços inexistentes. O nome antigo `governanca-agentes-copilot-studio-neiva.html` encaminha para o guia novo e preserva os parâmetros e o fragmento quando o JavaScript está disponível.
 
