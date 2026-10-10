@@ -1,0 +1,75 @@
+.home-hero { position: relative; overflow: hidden; padding: 88px 0 76px; }
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 90% 0, rgb(96 48 192 / 10%), transparent 55%), radial-gradient(ellipse at 5% 75%, rgb(16 160 192 / 9%), transparent 50%);
+}
+.home-hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 64px; position: relative; }
+.home-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--violet-text); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.home-eyebrow::before { content: ""; width: 26px; height: 3px; border-radius: 3px; background: var(--grad); }
+.home-hero h1 { font-size: clamp(2.3rem, 4.6vw, 4.15rem); letter-spacing: -.045em; line-height: 1.08; color: var(--title); margin: 22px 0; }
+.home-hero h1 span { color: var(--violet-text); }
+.home-lead { max-width: 58ch; margin: 0; color: var(--muted); font-size: 1.12rem; line-height: 1.8; }
+.home-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.home-signature { display: flex; align-items: center; gap: 10px; margin-top: 24px; font-size: .8rem; color: var(--muted); }
+.home-signature span:first-child { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); flex: none; }
+.journey-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+.journey-label { display: block; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 20px; }
+.journey-step { display: flex; align-items: center; gap: 16px; padding: 18px 0; position: relative; }
+.journey-step + .journey-step { border-top: 1px solid var(--line); }
+.journey-number { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 14px; font-weight: 700; color: var(--link); background: var(--royal-soft); flex: none; }
+.journey-step:nth-of-type(2) .journey-number { background: var(--violet-soft); color: var(--violet-text); }
+.journey-step:nth-of-type(3) .journey-number { background: var(--cyan-soft); color: var(--pos); }
+.journey-step strong { display: block; font-size: 1rem; color: var(--indigo-text); margin-bottom: 2px; }
+.journey-step p { font-size: .82rem; color: var(--muted); margin: 0; line-height: 1.5; }
+.journey-foot { border-top: 1px solid var(--line); margin: 10px 0 0; padding-top: 16px; color: var(--muted); font-size: .75rem; }
+.home-resources { background: var(--surface); border-block: 1px solid var(--line); padding: 64px 0 72px; }
+.home-section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.home-section-head h2 { font-size: clamp(1.6rem, 3vw, 2.15rem); color: var(--title); margin: 10px 0 6px; letter-spacing: -.035em; line-height: 1.2; }
+.home-section-head p { color: var(--muted); margin: 0; font-size: .96rem; }
+.resource-count { color: var(--muted); font-size: .8rem; white-space: nowrap; padding-bottom: 4px; }
+.resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.resource-card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); padding: 28px; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.resource-card:hover { border-color: var(--link); box-shadow: var(--shadow); transform: translateY(-3px); }
+.resource-top { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.resource-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--royal-soft); color: var(--link); flex: none; }
+.resource-icon svg { width: 24px; height: 24px; }
+.resource-icon img { width: 32px; height: 32px; object-fit: contain; }
+.resource-calculator .resource-icon { background: var(--violet-soft); color: var(--violet-text); }
+.resource-category { display: block; font-size: .76rem; font-weight: 700; color: var(--indigo-text); }
+.resource-type { display: block; font-size: .73rem; color: var(--muted); }
+.resource-card h3 { font-size: 1.45rem; line-height: 1.3; color: var(--title); letter-spacing: -.025em; margin: 0 0 12px; }
+.resource-card > p { color: var(--muted); font-size: .95rem; margin: 0 0 18px; }
+.resource-features { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 24px; list-style: none; }
+.resource-features li { border: 1px solid var(--line); border-radius: 7px; padding: 4px 8px; color: var(--indigo-text); font-size: .72rem; background: var(--surface); }
+.resource-link { display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin-top: auto; border-top: 1px solid var(--line); padding-top: 16px; font-weight: 700; font-size: .9rem; text-decoration: none; }
+.resource-link svg { width: 18px; height: 18px; flex: none; }
+.home-note { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-block: 48px; }
+.home-note h2 { font-size: 1.12rem; line-height: 1.4; color: var(--indigo-text); margin: 0 0 8px; }
+.home-note p { color: var(--muted); font-size: .88rem; margin: 0; }
+.error-page { min-height: 65vh; padding: 96px 0; }
+.error-page h1 { color: var(--title); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
+.error-page p { color: var(--muted); max-width: 55ch; margin-bottom: 24px; }
+@media (max-width: 1000px) {
+  .home-hero-grid { gap: 32px; grid-template-columns: 1.1fr .9fr; }
+  .journey-card { padding: 22px; }
+}
+@media (max-width: 760px) {
+  .home-hero { padding: 48px 0; }
+  .home-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .home-hero h1 { font-size: clamp(2.2rem, 7.6vw, 3.6rem); }
+  .home-lead { font-size: 1rem; }
+  .journey-card { max-width: 100%; }
+  .home-resources { padding-block: 40px 48px; }
+  .resource-grid, .home-note { grid-template-columns: 1fr; }
+  .home-section-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .resource-card { padding: 24px; }
+  .home-note { gap: 24px; padding-block: 32px; }
+}
+@media (max-width: 360px) {
+  .home-hero h1 { font-size: 2rem; }
+  .home-actions { align-items: stretch; flex-direction: column; }
+  .resource-card { padding: 20px; }
+}

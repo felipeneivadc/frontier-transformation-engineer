@@ -1,0 +1,15 @@
+node_modules/
+playwright-report/
+test-results/
+_site/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kit-de-marca/
+referencias/
+scratch/
