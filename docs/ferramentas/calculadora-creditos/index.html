@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>
+      Estimador de Copilot Credits | Frontier Transformation Engineer
+    </title>
+    <meta
+      name="description"
+      content="Estime Copilot Studio Standard, GitHub Copilot Harness e Cowork, com regras próprias, faixas de consumo e total consolidado."
+    />
+    <link
+      rel="canonical"
+      href="https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/calculadora-creditos/"
+    />
+    <link rel="icon" href="../../assets/images/logo.png" />
+    <script src="../../assets/js/theme-init.js"></script>
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <link rel="stylesheet" href="../../assets/css/calculator.css" />
+    <script src="../../assets/js/site.js" defer></script>
+    <script src="../../assets/js/calculator.js" type="module"></script>
+  </head>
+  <body data-page="calculator">
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <div data-site-header></div>
+    <noscript
+      ><nav class="fallback-nav" aria-label="Navegação">
+        <a href="../../">Início</a
+        ><a href="../../copilot-studio/">Copilot Studio</a>
+      </nav></noscript
+    >
+    <main id="main-content" class="site-container estimator-page" tabindex="-1">
+      <p class="page-breadcrumb">
+        <a href="../../">Início</a><span aria-hidden="true">/</span>Estimador de
+        créditos
+      </p>
+      <header class="estimator-heading">
+        <h1>Estimador de Copilot Credits</h1>
+        <p>
+          Três experiências, regras diferentes. Configure o uso e veja os
+          subtotais e o consumo consolidado.
+        </p>
+        <span class="estimate-meta"
+          >Orçamento ilustrativo em USD · 1 crédito = US$ 0,01</span
+        >
+      </header>
+      <noscript
+        ><p class="estimate-error">
+          Ative JavaScript para configurar produtos e calcular estimativas. As
+          fontes e ressalvas estão disponíveis abaixo.
+        </p></noscript
+      >
+      <div class="estimator-layout">
+        <div>
+          <section class="calc-section" aria-labelledby="products-title">
+            <h2 id="products-title">
+              <span class="step-number">1</span> Selecione as experiências
+            </h2>
+            <p class="section-help">
+              Escolha um ou vários produtos. O cálculo de cada experiência usa
+              sua própria unidade.
+            </p>
+            <div id="productOptions" class="product-options"></div>
+            <p id="queryNotice" class="estimate-error" role="status" hidden></p>
+          </section>
+          <div id="productForms"></div>
+          <details class="calc-section pricing-panel" id="p3Panel">
+            <summary>Avançado · Comparar pay-as-you-go e P3</summary>
+            <p class="section-help">
+              O P3 pré-compra <strong>commit units (CUs)</strong>, usadas para
+              pagar custos elegíveis em USD. Não são a mesma unidade que Copilot
+              Credits. Compra anual antecipada; saldo não usado não reduz o
+              valor pago.
+            </p>
+            <div id="p3Results">
+              <p class="section-help">
+                Configure os produtos para comparar os cenários.
+              </p>
+            </div>
+          </details>
+        </div>
+        <aside class="estimate-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Seu cenário</h2>
+          <div id="totalSummary" aria-live="polite"></div>
+          <div id="productResults"></div>
+          <div class="estimate-actions">
+            <button
+              class="site-button site-button-primary"
+              id="pdfBtn"
+              type="button"
+              disabled
+            >
+              Imprimir / PDF</button
+            ><button class="site-button" id="resetBtn" type="button">
+              Restaurar parâmetros
+            </button>
+          </div>
+          <p class="summary-note">
+            Resultados direcionais, não contratuais. Faixas não são limites de
+            gasto nem garantias de consumo.
+          </p>
+        </aside>
+      </div>
+      <section class="estimate-notes" aria-labelledby="notes-title">
+        <h2 id="notes-title">Premissas e fontes</h2>
+        <p>
+          Cowork e GitHub Copilot Harness assumem 22 dias úteis por mês e
+          Anthropic Opus 4.8 na referência. Standard utiliza os medidores por
+          recurso. O orçamento não inclui impostos, câmbio, licenças de
+          assinatura ou modelos trazidos de serviços externos.
+        </p>
+        <p>
+          <strong>Harness:</strong> construção, testes e avaliações também podem
+          consumir créditos. Esse consumo adicional não é quantificado pelas
+          entradas de uso desta ferramenta. Heavy tem apenas um mínimo, sem teto
+          definido. Não é o serviço de programação GitHub Copilot.
+        </p>
+        <p>
+          <strong>Standard:</strong> a inclusão Microsoft 365 depende de uso
+          autenticado elegível, no canal Microsoft 365 e dentro das condições de
+          licença. CUA e fluxos com outros gatilhos continuam cobrados. As ações
+          de fluxos são informadas como volume mensal executado, não apenas
+          quantidade de fluxos configurados.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://microsoft.github.io/copilot-studio-estimator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Estimador oficial Standard ↗</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://nptnlopppecostweb.azurewebsites.net/#/estimator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Estimador oficial Cowork / Harness ↗</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Taxas e condições de uso Standard ↗</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Commit units e pré-compra P3 ↗</a
+            >
+          </li>
+        </ul>
+        <p id="referenceStamp"></p>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <div
+      class="site-status"
+      id="siteStatus"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+  </body>
+</html>

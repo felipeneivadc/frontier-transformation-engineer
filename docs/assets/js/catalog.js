@@ -1,0 +1,133 @@
+export const HUBS = [
+  {
+    id: "studio",
+    title: "Copilot Studio",
+    subtitle: "Governar, construir e planejar agentes",
+    description:
+      "Guia de governança, estimativas Standard e GitHub Copilot Harness, e documentação selecionada.",
+    path: "copilot-studio/",
+    icon: "copilot-studio.png",
+  },
+  {
+    id: "m365",
+    title: "Microsoft 365 e Cowork",
+    subtitle: "Planejar o trabalho com agentes",
+    description:
+      "Consumo por perfil, faixas de intensidade e referências para administrar Copilot Credits.",
+    path: "microsoft-365-copilot/",
+    icon: "Coworking.png",
+  },
+];
+export const GROUPS = {
+  governance: "Governança e administração",
+  estimates: "Calculadoras NEIVA",
+  references: "Documentação e ferramentas oficiais",
+};
+export const RESOURCES = [
+  {
+    hub: "studio",
+    group: "governance",
+    title: "Guia de governança de agentes",
+    description: "Cinco pilares, autoavaliação, checklist, RACI e quiz.",
+    href: "copilot-studio/governanca/",
+    type: "NEIVA · Guia interativo",
+  },
+  {
+    hub: "studio",
+    group: "governance",
+    title: "Segurança e governança no Copilot Studio",
+    description: "Conceitos e controles nativos da plataforma.",
+    href: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
+    type: "Microsoft Learn",
+  },
+  {
+    hub: "studio",
+    group: "governance",
+    title: "Estratégia de ALM",
+    description: "Soluções, ambientes e promoção de agentes.",
+    href: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/alm",
+    type: "Microsoft Learn",
+  },
+  {
+    hub: "studio",
+    group: "estimates",
+    title: "Estimar Copilot Studio Standard",
+    description: "Tráfego, conhecimento, ferramentas, ações e licenças.",
+    href: "ferramentas/calculadora-creditos/?products=standard",
+    type: "NEIVA · Calculadora",
+  },
+  {
+    hub: "studio",
+    group: "estimates",
+    title: "Estimar GitHub Copilot Harness",
+    description: "Interações diárias e faixas por complexidade de tarefa.",
+    href: "ferramentas/calculadora-creditos/?products=harness",
+    type: "NEIVA · Calculadora",
+  },
+  {
+    hub: "studio",
+    group: "references",
+    title: "Taxas do Standard",
+    description: "Medidores e condições de inclusão na licença Microsoft 365.",
+    href: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management",
+    type: "Microsoft Learn",
+  },
+  {
+    hub: "studio",
+    group: "references",
+    title: "Cobrança do GitHub Copilot Harness",
+    description: "Consumo em uso, construção, testes e avaliações.",
+    href: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview",
+    type: "Microsoft Learn",
+  },
+  {
+    hub: "studio",
+    group: "references",
+    title: "Estimador oficial Standard",
+    description:
+      "Referência Microsoft para agentes customizados e outros produtos.",
+    href: "https://microsoft.github.io/copilot-studio-estimator/",
+    type: "Microsoft · Ferramenta externa",
+  },
+  {
+    hub: "studio",
+    group: "references",
+    title: "Estimador oficial de Copilot Credits",
+    description: "Referência de faixas para Harness e Cowork.",
+    href: "https://nptnlopppecostweb.azurewebsites.net/#/estimator",
+    type: "Microsoft · Ferramenta externa",
+  },
+  {
+    hub: "m365",
+    group: "estimates",
+    title: "Estimar Copilot Cowork",
+    description:
+      "Quatro perfis, distribuição Leve/Médio/Pesado e créditos por dia.",
+    href: "ferramentas/calculadora-creditos/?products=cowork",
+    type: "NEIVA · Calculadora",
+  },
+  {
+    hub: "m365",
+    group: "references",
+    title: "Estimador oficial de Copilot Credits",
+    description: "Perfis e faixas que embasam o planejamento de Cowork.",
+    href: "https://nptnlopppecostweb.azurewebsites.net/#/estimator",
+    type: "Microsoft · Ferramenta externa",
+  },
+  {
+    hub: "m365",
+    group: "references",
+    title: "Administrar experiências com cobrança por uso",
+    description: "Capacidade, políticas e administração de Copilot Credits.",
+    href: "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits",
+    type: "Microsoft Learn",
+  },
+  {
+    hub: "m365",
+    group: "references",
+    title: "Plano de pré-compra P3",
+    description: "Commit units, escopo de compra e custos elegíveis.",
+    href: "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3",
+    type: "Microsoft Learn",
+  },
+];

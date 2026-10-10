@@ -2,12 +2,12 @@
 
 Os ícones identificam as tecnologias abordadas nos materiais educacionais. Não representam a NEIVA Cloud Solutions nem indicam endosso da Microsoft. São exibidos sem alteração de proporção, forma ou cores.
 
-| Arquivo local | Origem Microsoft |
-| --- | --- |
-| `assets/images/copilot-studio.png` | [`microsoft/agent-resources/images/copilot-studio-icon.png`](https://github.com/microsoft/agent-resources/blob/657b0f259524e5d9898dae685b7cd59d7379d721/images/copilot-studio-icon.png) |
-| `assets/images/microsoft-365-copilot.png` | [`microsoft/agent-resources/images/copilot-icon.png`](https://github.com/microsoft/agent-resources/blob/657b0f259524e5d9898dae685b7cd59d7379d721/images/copilot-icon.png) |
+| Arquivo local                                  | Origem Microsoft                                                                                                                                                                        |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/assets/images/copilot-studio.png`        | [`microsoft/agent-resources/images/copilot-studio-icon.png`](https://github.com/microsoft/agent-resources/blob/657b0f259524e5d9898dae685b7cd59d7379d721/images/copilot-studio-icon.png) |
+| `docs/assets/images/microsoft-365-copilot.png` | [`microsoft/agent-resources/images/copilot-icon.png`](https://github.com/microsoft/agent-resources/blob/657b0f259524e5d9898dae685b7cd59d7379d721/images/copilot-icon.png)               |
 
-O material de Cowork usa o ícone de **Microsoft 365 Copilot**, não um desenho inventado de um ícone exclusivo para Cowork.
+`docs/assets/images/Coworking.png` é a imagem fornecida pelo proprietário do projeto para identificar Cowork. O arquivo foi preservado sem edição, recoloração ou alteração de proporções. Sua origem e condições de marca não são inferidas da licença do repositório Microsoft acima.
 
 Consulte também as [diretrizes oficiais de uso de ícones do Power Platform](https://learn.microsoft.com/en-us/power-platform/guidance/icons). Marcas comerciais e ícones permanecem propriedade dos respectivos titulares.
 
