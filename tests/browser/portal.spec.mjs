@@ -59,8 +59,13 @@ for (const [name, route] of pages) {
               ),
           ).toEqual([]);
         }
-        if (name === "discovery")
+        if (name === "discovery") {
           await expect(page.locator("#journey-nav .nav-button")).toHaveCount(6);
+          await expect(page.locator(".orbit-center")).toHaveCSS(
+            "display",
+            "flex",
+          );
+        }
         await expect(
           page.locator('.site-nav [aria-current="page"]'),
         ).toHaveCount(1);
