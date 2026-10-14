@@ -943,7 +943,7 @@
 #discoveryApp .hero .chips {
   margin-block-start: 22px;
 }
-#discoveryApp .discovery-discovery-orbit {
+#discoveryApp .discovery-orbit {
   position: relative;
   aspect-ratio: 1;
   inline-size: 100%;
@@ -953,14 +953,14 @@
   display: grid;
   place-items: center;
 }
-#discoveryApp .discovery-orbit-ring {
+#discoveryApp .orbit-ring {
   position: absolute;
   inset: 12%;
   border: 1px solid var(--discovery-line);
   border-radius: 50%;
   animation: discovery-orbit 48s linear infinite;
 }
-#discoveryApp .discovery-orbit-ring:before {
+#discoveryApp .orbit-ring:before {
   content: "";
   position: absolute;
   inline-size: 10px;
@@ -971,7 +971,7 @@
   inset-block-start: 10%;
   inset-inline-start: 12%;
 }
-#discoveryApp .discovery-orbit-ring.second {
+#discoveryApp .orbit-ring.second {
   inset: 25%;
   animation-direction: reverse;
   animation-duration: 35s;
@@ -982,12 +982,12 @@
     var(--discovery-white)
   );
 }
-#discoveryApp .discovery-orbit-ring.second:before {
+#discoveryApp .orbit-ring.second:before {
   background: var(--discovery-magenta);
   inset-block-start: 80%;
   inset-inline-start: 84%;
 }
-#discoveryApp .discovery-orbit-center {
+#discoveryApp .orbit-center {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1001,23 +1001,23 @@
   box-shadow: var(--discovery-shadow);
   z-index: 1;
 }
-#discoveryApp .discovery-orbit-center svg {
+#discoveryApp .orbit-center svg {
   inline-size: 33px;
   block-size: 33px;
   color: var(--discovery-blue);
 }
-#discoveryApp .discovery-orbit-center strong {
+#discoveryApp .orbit-center strong {
   font-size: 1.15rem;
   color: var(--discovery-indigo);
   letter-spacing: -0.02em;
 }
-#discoveryApp .discovery-orbit-center span {
+#discoveryApp .orbit-center span {
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   color: var(--discovery-violet);
   font-weight: 700;
 }
-#discoveryApp .discovery-orbit-chip {
+#discoveryApp .orbit-chip {
   position: absolute;
   display: flex;
   align-items: center;
@@ -1035,18 +1035,18 @@
   z-index: 2;
   animation: discovery-float 5s ease-in-out infinite;
 }
-#discoveryApp .discovery-orbit-chip.one {
+#discoveryApp .orbit-chip.one {
   inset-block-start: 7%;
   inset-inline-start: 5%;
   --discovery-card-accent: var(--discovery-blue);
 }
-#discoveryApp .discovery-orbit-chip.two {
+#discoveryApp .orbit-chip.two {
   inset-block-start: 48%;
   inset-inline-end: -10%;
   --discovery-card-accent: var(--discovery-violet);
   animation-delay: -2s;
 }
-#discoveryApp .discovery-orbit-chip.three {
+#discoveryApp .orbit-chip.three {
   inset-block-end: 5%;
   inset-inline-start: 7%;
   --discovery-card-accent: var(--discovery-cyan);
@@ -2078,10 +2078,10 @@
   #discoveryApp .hero h1 {
     font-size: 2.6rem;
   }
-  #discoveryApp .discovery-discovery-orbit {
+  #discoveryApp .discovery-orbit {
     max-inline-size: 275px;
   }
-  #discoveryApp .discovery-orbit-chip {
+  #discoveryApp .orbit-chip {
     padding: 9px 12px;
     font-size: 0.68rem;
   }
