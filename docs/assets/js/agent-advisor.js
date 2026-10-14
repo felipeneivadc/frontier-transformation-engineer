@@ -1,5 +1,21 @@
 /* ---------- LOGO: cole aqui o símbolo oficial (data URI base64 ou URL) ---------- */
 const LOGO_SRC = "../../assets/images/logo.png"; // símbolo oficial NEIVA (embutido)
+const PLATFORM_ICON_ROOT = new URL(
+  "../../assets/images/microsoft/",
+  window.location.href,
+);
+const PLATFORM_ICON_ASSETS = Object.freeze({
+  m365_copilot: "m365-copilot.svg",
+  cowork: "copilot-cowork.png",
+  scout: "microsoft-scout.png",
+  agent_builder: "agent-builder.png",
+  copilot_studio: "copilot-studio.svg",
+  foundry: "ai-foundry.png",
+  sharepoint_agents: "sharepoint.png",
+  agents_toolkit: "agent-framework.png",
+  github_copilot: "github-copilot.png",
+  agent_365: "agent365.svg",
+});
 
 function renderLogos() {
   document.querySelectorAll("[data-logo]").forEach((el) => {
@@ -22,25 +38,6 @@ function renderLogos() {
 }
 
 /* ---------- Dados do catálogo ---------- */
-/* Ícones oficiais: Agent Platform Advisor (Microsoft), Microsoft 365 docs (SharePoint), Microsoft 365 Agents Toolkit e GitHub Octicons. Usados sem alteração.
-   GitHub Copilot e Agent 365: imagens referenciadas por URL (precisam de internet). Se falharem, o GitHub Copilot usa a Octicon embutida e o Agent 365 mostra o selo A365. */
-const ICON_URLS = {};
-const ICONS = {};
-function legacyIco(id, s) {
-  const st = `width:${s}px;height:${s}px`,
-    fs = Math.max(9, Math.round(s * 0.3)),
-    m = { sharepoint_agents: "SP", agent_365: "A365" }[id] || "•";
-  const mono = (hidden) =>
-    `<span class="pico pico-mono" style="${hidden ? "display:none;" : ""}${st};font-size:${fs}px" aria-hidden="true">${m}</span>`;
-  const local = (hidden) =>
-    ICONS[id]
-      ? `<img class="pico" src="${ICONS[id]}" alt="" width="${s}" height="${s}" style="${hidden ? "display:none;" : ""}${st}">`
-      : mono(hidden);
-  // URL externa (preferida) com fallback para o ícone embutido ou para o selo de iniciais
-  if (ICON_URLS[id])
-    return `<span class="pico-wrap"><img class="pico" src="${ICON_URLS[id]}" alt="" width="${s}" height="${s}" style="${st}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-grid'">${local(true)}</span>`;
-  return local(false);
-}
 const CAT = {
   m365_copilot: {
     name: "Microsoft 365 Copilot",
@@ -1304,6 +1301,9 @@ loadHash();
 
 function ico(id, s) {
   const size = Number.isFinite(Number(s)) ? Number(s) : 32;
+  const asset = PLATFORM_ICON_ASSETS[id];
+  if (asset)
+    return `<img class="pico advisor-platform-icon" src="${new URL(asset, PLATFORM_ICON_ROOT).href}" alt="" width="${size}" height="${size}">`;
   const glyphs = {
     m365_copilot: '<path d="M5 5h14v10H9l-4 4V5Z"/><path d="M8 9h8M8 12h5"/>',
     cowork: '<path d="M4 5h16v10H8l-4 4V5Z"/><path d="m9 10 2 2 4-4"/>',
