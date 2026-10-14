@@ -96,8 +96,9 @@ JavaScript, e ter cobertura de navegador para seus fluxos e larguras suportadas.
 
 O **Agent Advisor** compara caminhos para usar ou construir agentes, mantendo a
 pontuação explícita, os links oficiais, a exportação Markdown e o fragmento de
-URL compartilhável. Seus ícones são SVGs neutros locais; não adicione imagens
-remotas para representar plataformas.
+URL compartilhável. Os ícones das plataformas ficam em
+`docs/assets/images/microsoft/`; não adicione imagens remotas para representar
+produtos.
 
 O **AI Discovery Studio** é uma oficina local para descoberta, priorização e
 preparação de pilotos. O rascunho no navegador é opcional; importação, backup

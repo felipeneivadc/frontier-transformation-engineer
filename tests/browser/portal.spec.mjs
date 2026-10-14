@@ -44,8 +44,21 @@ for (const [name, route] of pages) {
           await page.locator('[data-select="cowork"]').check();
           await page.locator("#cowork-corp-users").fill("100");
         }
-        if (name === "advisor")
+        if (name === "advisor") {
           await expect(page.locator("#catGrid .cat-card")).toHaveCount(10);
+          await expect(page.locator("img.advisor-platform-icon")).toHaveCount(
+            16,
+          );
+          expect(
+            await page
+              .locator("img.advisor-platform-icon")
+              .evaluateAll((images) =>
+                images
+                  .map((image) => image.src)
+                  .filter((src) => !src.includes("/assets/images/microsoft/")),
+              ),
+          ).toEqual([]);
+        }
         if (name === "discovery")
           await expect(page.locator("#journey-nav .nav-button")).toHaveCount(6);
         await expect(
