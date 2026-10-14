@@ -1,0 +1,2646 @@
+#discoveryApp {
+  --discovery-blue: #2563eb;
+  --discovery-violet: #6030c0;
+  --discovery-cyan: #10a0c0;
+  --discovery-indigo: #1e3a8a;
+  --discovery-magenta: #ec4899;
+  --discovery-fog: #f5f7ff;
+  --discovery-lavender: #eef2ff;
+  --discovery-white: #ffffff;
+  --discovery-ink: #1f2937;
+  --discovery-muted: #6b7280;
+  --discovery-line: color-mix(
+    in srgb,
+    var(--discovery-indigo) 15%,
+    var(--discovery-white)
+  );
+  --discovery-soft: color-mix(
+    in srgb,
+    var(--discovery-blue) 5%,
+    var(--discovery-white)
+  );
+  --discovery-shadow: 0 12px 38px
+    color-mix(in srgb, var(--discovery-indigo) 7%, transparent);
+  --discovery-radius: 18px;
+  --discovery-sidebar: 248px;
+  --discovery-header: 82px;
+  color-scheme: light dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+}
+#discoveryApp * {
+  box-sizing: border-box;
+}
+#discoveryApp {
+  margin: 0;
+  background: var(--discovery-fog);
+  color: var(--discovery-ink);
+  line-height: 1.55;
+}
+#discoveryApp button,
+#discoveryApp input,
+#discoveryApp textarea,
+#discoveryApp select {
+  font: inherit;
+}
+#discoveryApp button,
+#discoveryApp a,
+#discoveryApp input,
+#discoveryApp textarea,
+#discoveryApp select {
+  -webkit-tap-highlight-color: transparent;
+}
+#discoveryApp button {
+  cursor: pointer;
+}
+#discoveryApp button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+#discoveryApp button:focus-visible,
+#discoveryApp a:focus-visible,
+#discoveryApp input:focus-visible,
+#discoveryApp textarea:focus-visible,
+#discoveryApp select:focus-visible,
+#discoveryApp summary:focus-visible {
+  outline: 3px solid var(--discovery-blue);
+  outline-offset: 4px;
+}
+#discoveryApp a {
+  color: var(--discovery-blue);
+  text-underline-offset: 3px;
+}
+#discoveryApp h1,
+#discoveryApp h2,
+#discoveryApp h3,
+#discoveryApp h4,
+#discoveryApp p {
+  margin-block: 0;
+}
+#discoveryApp h1,
+#discoveryApp h2,
+#discoveryApp h3 {
+  color: var(--discovery-blue);
+  line-height: 1.2;
+}
+#discoveryApp h1 {
+  font-size: clamp(1.8rem, 2.8vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+#discoveryApp h2 {
+  font-size: 1.26rem;
+  letter-spacing: -0.018em;
+}
+#discoveryApp h3 {
+  font-size: 1.07rem;
+}
+#discoveryApp small {
+  font-size: 0.8rem;
+}
+#discoveryApp svg {
+  flex-shrink: 0;
+}
+#discoveryApp button svg {
+  pointer-events: none;
+}
+#discoveryApp code,
+#discoveryApp pre {
+  font-family: Consolas, "Courier New", monospace;
+}
+#discoveryApp pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--discovery-indigo);
+  color: var(--discovery-white);
+  padding: 20px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+#discoveryApp hr {
+  border: 0;
+  border-block-start: 1px solid var(--discovery-line);
+  margin-block: 24px;
+}
+#discoveryApp .sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+#discoveryApp .skip {
+  position: fixed;
+  inset-block-start: -100px;
+  inset-inline-start: 16px;
+  z-index: 100;
+  background: var(--discovery-white);
+  padding: 12px 20px;
+  border: 2px solid var(--discovery-blue);
+  border-radius: 8px;
+}
+#discoveryApp .skip:focus {
+  inset-block-start: 10px;
+}
+#discoveryApp [hidden] {
+  display: none !important;
+}
+#discoveryApp .icon {
+  inline-size: 19px;
+  block-size: 19px;
+  vertical-align: middle;
+}
+#discoveryApp .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-block-size: 43px;
+  padding: 10px 17px;
+  border: 1px solid var(--discovery-line);
+  border-radius: 10px;
+  background: var(--discovery-white);
+  color: var(--discovery-indigo);
+  font-weight: 600;
+  font-size: 0.89rem;
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    background 0.18s,
+    transform 0.18s,
+    border-color 0.18s;
+}
+#discoveryApp .btn:hover {
+  background: var(--discovery-lavender);
+  border-color: var(--discovery-blue);
+}
+#discoveryApp .btn:active {
+  transform: translateY(1px);
+}
+#discoveryApp .btn.primary {
+  background: var(--discovery-blue);
+  color: var(--discovery-white);
+  border-color: var(--discovery-blue);
+}
+#discoveryApp .btn.primary:hover {
+  background: var(--discovery-indigo);
+  border-color: var(--discovery-indigo);
+}
+#discoveryApp .btn.violet {
+  background: var(--discovery-violet);
+  color: var(--discovery-white);
+  border-color: var(--discovery-violet);
+}
+#discoveryApp .btn.subtle {
+  background: transparent;
+  border-color: transparent;
+}
+#discoveryApp .btn.small {
+  padding: 8px 11px;
+  font-size: 0.81rem;
+  min-block-size: 38px;
+}
+#discoveryApp .btn.icon-only {
+  padding: 10px;
+  min-inline-size: 43px;
+}
+#discoveryApp .btn.warn {
+  border-color: var(--discovery-violet);
+  color: var(--discovery-violet);
+}
+#discoveryApp .btn[aria-pressed="true"] {
+  background: var(--discovery-lavender);
+  border-color: var(--discovery-violet);
+  color: var(--discovery-violet);
+}
+#discoveryApp .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+#discoveryApp .grow {
+  flex: 1;
+}
+#discoveryApp .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--discovery-lavender);
+  color: var(--discovery-indigo);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+#discoveryApp .tag.violet {
+  color: var(--discovery-violet);
+}
+#discoveryApp .tag.outline {
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+}
+#discoveryApp .tag.dot:before {
+  content: "";
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--discovery-cyan);
+}
+#discoveryApp .eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--discovery-violet);
+  display: block;
+  margin-block-end: 10px;
+}
+#discoveryApp .muted {
+  color: var(--discovery-muted);
+}
+#discoveryApp .helper {
+  font-size: 0.82rem;
+  color: var(--discovery-ink);
+  line-height: 1.6;
+}
+#discoveryApp .caption {
+  font-size: 0.75rem;
+  color: var(--discovery-ink);
+}
+#discoveryApp .text-violet {
+  color: var(--discovery-violet);
+}
+#discoveryApp .title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-block-end: 20px;
+}
+#discoveryApp .title-row h2 {
+  flex: 1;
+}
+#discoveryApp .stack > * + * {
+  margin-block-start: 16px;
+}
+#discoveryApp .tight > * + * {
+  margin-block-start: 8px;
+}
+#discoveryApp .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+#discoveryApp .page-intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-block-end: 26px;
+}
+#discoveryApp .page-intro p {
+  max-inline-size: 750px;
+  margin-block-start: 12px;
+  color: var(--discovery-ink);
+  font-size: 0.98rem;
+}
+#discoveryApp .page-intro .btn {
+  flex-shrink: 0;
+}
+#discoveryApp .page {
+  animation: discovery-appear 0.3s ease both;
+}
+#discoveryApp .card {
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 4px solid
+    var(--discovery-card-accent, var(--discovery-blue));
+  background: var(--discovery-white);
+  border-radius: var(--discovery-radius);
+  padding: 24px;
+  min-inline-size: 0;
+}
+#discoveryApp .card.cyan {
+  --discovery-card-accent: var(--discovery-cyan);
+}
+#discoveryApp .card.violet {
+  --discovery-card-accent: var(--discovery-violet);
+}
+#discoveryApp .card.magenta {
+  --discovery-card-accent: var(--discovery-magenta);
+}
+#discoveryApp .card.indigo {
+  --discovery-card-accent: var(--discovery-indigo);
+}
+#discoveryApp .card.soft {
+  background: var(--discovery-lavender);
+}
+#discoveryApp .card p {
+  margin-block-start: 10px;
+}
+#discoveryApp .grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+#discoveryApp .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+#discoveryApp .split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(270px, 1fr);
+  gap: 22px;
+}
+#discoveryApp .mb {
+  margin-block-end: 24px;
+}
+#discoveryApp .mt {
+  margin-block-start: 24px;
+}
+#discoveryApp .note {
+  padding: 14px 18px;
+  background: var(--discovery-lavender);
+  border-inline-start: 3px solid var(--discovery-violet);
+  border-radius: 9px;
+  color: var(--discovery-ink);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+#discoveryApp .note strong {
+  color: var(--discovery-indigo);
+}
+#discoveryApp .note p {
+  margin-block-start: 5px;
+}
+#discoveryApp .notice {
+  padding: 14px 18px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 4px solid var(--discovery-magenta);
+  border-radius: 12px;
+  margin-block-end: 20px;
+}
+#discoveryApp .empty {
+  padding: 40px 28px;
+  text-align: center;
+  background: var(--discovery-white);
+  border: 1px dashed var(--discovery-line);
+  border-radius: 16px;
+}
+#discoveryApp .empty .empty-icon {
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  inline-size: 56px;
+  block-size: 56px;
+  background: var(--discovery-lavender);
+  border-radius: 16px;
+  color: var(--discovery-violet);
+}
+#discoveryApp .empty p {
+  max-inline-size: 560px;
+  margin: 12px auto 22px;
+  font-size: 0.9rem;
+}
+#discoveryApp .empty .button-row {
+  justify-content: center;
+}
+#discoveryApp .field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-inline-size: 0;
+}
+#discoveryApp .field label,
+#discoveryApp .field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .field input,
+#discoveryApp .field textarea,
+#discoveryApp .field select,
+#discoveryApp input.search {
+  inline-size: 100%;
+  border: 1px solid var(--discovery-muted);
+  background: var(--discovery-white);
+  border-radius: 9px;
+  padding: 11px 12px;
+  color: var(--discovery-ink);
+  min-block-size: 44px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+#discoveryApp .field input:focus,
+#discoveryApp .field textarea:focus,
+#discoveryApp .field select:focus,
+#discoveryApp input.search:focus {
+  border-color: var(--discovery-blue);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--discovery-blue) 9%, transparent);
+}
+#discoveryApp input::placeholder,
+#discoveryApp textarea::placeholder {
+  color: var(--discovery-muted);
+  opacity: 1;
+}
+#discoveryApp .field textarea {
+  resize: vertical;
+  min-block-size: 100px;
+}
+#discoveryApp .field small {
+  font-size: 0.74rem;
+  color: var(--discovery-ink);
+}
+#discoveryApp .fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+#discoveryApp .full {
+  grid-column: 1/-1;
+}
+#discoveryApp .field.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+#discoveryApp .field.inline input[type="checkbox"] {
+  inline-size: 19px;
+  block-size: 19px;
+  min-block-size: 0;
+  accent-color: var(--discovery-blue);
+}
+#discoveryApp fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+#discoveryApp legend {
+  font-weight: 700;
+  color: var(--discovery-blue);
+  font-size: 1.07rem;
+  padding: 0;
+  margin-block-end: 16px;
+}
+#discoveryApp .field .required {
+  color: var(--discovery-violet);
+}
+#discoveryApp .tag-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-block-start: 12px;
+}
+#discoveryApp .text-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--discovery-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font-size: 0.84rem;
+}
+#discoveryApp .filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-block: 15px 22px;
+}
+#discoveryApp .filter {
+  padding: 8px 13px;
+  border: 1px solid var(--discovery-line);
+  background: var(--discovery-white);
+  color: var(--discovery-indigo);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  min-block-size: 38px;
+}
+#discoveryApp .filter.active {
+  background: var(--discovery-indigo);
+  border-color: var(--discovery-indigo);
+  color: var(--discovery-white);
+}
+#discoveryApp .toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-block-end: 20px;
+}
+#discoveryApp .toolbar .search-wrap {
+  flex: 1;
+  min-inline-size: 200px;
+}
+#discoveryApp .search-wrap {
+  position: relative;
+}
+#discoveryApp .search-wrap input {
+  padding-inline-start: 40px;
+}
+#discoveryApp .search-wrap > .icon {
+  position: absolute;
+  inset-inline-start: 13px;
+  inset-block-start: 13px;
+  color: var(--discovery-muted);
+  pointer-events: none;
+}
+#discoveryApp .topbar {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+  min-block-size: var(--discovery-header);
+  background: var(--discovery-white);
+  border-block-end: 1px solid var(--discovery-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 26px 8px 13px;
+}
+#discoveryApp .brand {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-inline-size: 215px;
+}
+#discoveryApp .brand img {
+  inline-size: 66px;
+  block-size: 66px;
+  object-fit: contain;
+  background: var(--discovery-white);
+  flex-shrink: 0;
+}
+#discoveryApp .brand-name {
+  font-size: 1.02rem;
+  letter-spacing: 0.045em;
+  font-weight: 800;
+  color: var(--discovery-indigo);
+  line-height: 1.2;
+}
+#discoveryApp .brand-name span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  display: block;
+  margin-block-start: 4px;
+}
+#discoveryApp .product-name {
+  padding-inline-start: 24px;
+  border-inline-start: 1px solid var(--discovery-line);
+  margin-inline-end: auto;
+}
+#discoveryApp .product-name strong {
+  font-size: 0.86rem;
+  color: var(--discovery-blue);
+  display: block;
+  letter-spacing: 0.025em;
+}
+#discoveryApp .product-name span {
+  font-size: 0.71rem;
+  color: var(--discovery-muted);
+}
+#discoveryApp .top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#discoveryApp .save-state {
+  font-size: 0.74rem;
+  color: var(--discovery-muted);
+  max-inline-size: 185px;
+  text-align: end;
+  line-height: 1.45;
+  margin-inline-end: 8px;
+}
+#discoveryApp .save-state strong {
+  display: block;
+  color: var(--discovery-indigo);
+  font-weight: 600;
+}
+#discoveryApp .mobile-menu {
+  display: none;
+}
+#discoveryApp .sidebar {
+  position: fixed;
+  inset-block-start: var(--discovery-header);
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: var(--discovery-sidebar);
+  padding: 26px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--discovery-white);
+  border-inline-end: 1px solid var(--discovery-line);
+  z-index: 15;
+}
+#discoveryApp .nav-label {
+  font-size: 0.63rem;
+  letter-spacing: 0.14em;
+  color: var(--discovery-muted);
+  font-weight: 700;
+  padding-inline: 13px;
+  margin-block-end: 12px;
+}
+#discoveryApp .nav-label.second {
+  margin-block-start: 23px;
+}
+#discoveryApp .nav-button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  inline-size: 100%;
+  text-align: start;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--discovery-ink);
+  border-radius: 10px;
+  padding: 11px 12px;
+  margin-block-end: 5px;
+  min-block-size: 47px;
+  font-size: 0.84rem;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+#discoveryApp .nav-button .num {
+  display: grid;
+  place-items: center;
+  inline-size: 26px;
+  block-size: 26px;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border: 1px solid var(--discovery-line);
+  border-radius: 8px;
+  color: var(--discovery-muted);
+  background: var(--discovery-white);
+}
+#discoveryApp .nav-button .nav-copy {
+  flex: 1;
+}
+#discoveryApp .nav-button .check {
+  inline-size: 13px;
+  block-size: 13px;
+  color: var(--discovery-violet);
+}
+#discoveryApp .nav-button:hover {
+  background: var(--discovery-fog);
+}
+#discoveryApp .nav-button.active {
+  background: var(--discovery-lavender);
+  color: var(--discovery-blue);
+  font-weight: 700;
+}
+#discoveryApp .nav-button.active .num {
+  background: var(--discovery-blue);
+  color: var(--discovery-white);
+  border-color: var(--discovery-blue);
+}
+#discoveryApp .nav-button.done:not(.active) .num {
+  border-color: var(--discovery-violet);
+  color: var(--discovery-violet);
+}
+#discoveryApp .sidebar-bottom {
+  margin-block-start: auto;
+  padding-block-start: 26px;
+}
+#discoveryApp .timer {
+  padding: 15px;
+  background: var(--discovery-fog);
+  border-radius: 13px;
+  border: 1px solid var(--discovery-line);
+}
+#discoveryApp .timer .eyebrow {
+  margin-block-end: 5px;
+  font-size: 0.64rem;
+}
+#discoveryApp .timer-display {
+  font-variant-numeric: tabular-nums;
+  color: var(--discovery-indigo);
+  font-size: 1.85rem;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+#discoveryApp .timer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block: 8px;
+}
+#discoveryApp .timer input {
+  inline-size: 54px;
+  padding: 5px;
+  border: 1px solid var(--discovery-muted);
+  border-radius: 6px;
+  color: var(--discovery-ink);
+  background: var(--discovery-white);
+  font-size: 0.77rem;
+}
+#discoveryApp .timer button {
+  min-block-size: 34px;
+}
+#discoveryApp .timer .btn {
+  padding: 7px 9px;
+  font-size: 0.75rem;
+}
+#discoveryApp .sidebar-foot {
+  font-size: 0.68rem;
+  color: var(--discovery-muted);
+  line-height: 1.5;
+  padding: 13px 10px 0;
+}
+#discoveryApp .sidebar-foot span {
+  color: var(--discovery-indigo);
+  display: block;
+  font-weight: 600;
+}
+#discoveryApp .workspace {
+  margin-inline-start: var(--discovery-sidebar);
+  min-block-size: calc(100vh - var(--discovery-header));
+  display: flex;
+  flex-direction: column;
+}
+#discoveryApp .workspace-inner {
+  padding: 27px clamp(22px, 3vw, 48px) 36px;
+  inline-size: 100%;
+  max-inline-size: 1600px;
+  margin-inline: auto;
+  flex: 1;
+}
+#discoveryApp .contextbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-block-end: 23px;
+}
+#discoveryApp .breadcrumb {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .client-pill {
+  font-size: 0.77rem;
+  color: var(--discovery-indigo);
+  background: var(--discovery-white);
+  padding: 7px 12px;
+  border: 1px solid var(--discovery-line);
+  border-radius: 40px;
+  max-inline-size: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#discoveryApp .session-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--discovery-indigo);
+  font-size: 0.7rem;
+}
+#discoveryApp .progress-track {
+  block-size: 5px;
+  inline-size: 95px;
+  background: var(--discovery-lavender);
+  border-radius: 20px;
+  overflow: hidden;
+}
+#discoveryApp .progress-track span {
+  display: block;
+  block-size: 100%;
+  background: var(--discovery-violet);
+  transition: inline-size 0.3s;
+  border-radius: 20px;
+}
+#discoveryApp .bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 32px;
+  padding-block-start: 24px;
+  border-block-start: 1px solid var(--discovery-line);
+  gap: 12px;
+}
+#discoveryApp .bottom-nav .step-note {
+  color: var(--discovery-indigo);
+  font-size: 0.74rem;
+  text-align: center;
+  flex: 1;
+}
+#discoveryApp .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 16px clamp(22px, 3vw, 48px);
+  border-block-start: 1px solid var(--discovery-line);
+  background: var(--discovery-white);
+}
+#discoveryApp .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+#discoveryApp .footer-brand img {
+  inline-size: 52px;
+  block-size: 52px;
+  object-fit: contain;
+}
+#discoveryApp .footer-tagline {
+  font-size: 0.8rem;
+  color: var(--discovery-violet);
+  font-weight: 600;
+}
+#discoveryApp .footer a {
+  font-size: 0.76rem;
+}
+#discoveryApp .footer-small {
+  font-size: 0.68rem;
+  color: var(--discovery-muted);
+}
+#discoveryApp .focus-mode .sidebar {
+  display: none;
+}
+#discoveryApp .focus-mode .workspace {
+  margin-inline-start: 0;
+}
+#discoveryApp .focus-mode .workspace-inner {
+  max-inline-size: 1400px;
+}
+#discoveryApp .focus-mode .product-name {
+  border: 0;
+}
+#discoveryApp .focus-mode .facilitator-only {
+  display: none;
+}
+#discoveryApp .topbar:before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--discovery-cyan),
+    var(--discovery-blue),
+    var(--discovery-violet)
+  );
+}
+#discoveryApp #main-content:focus {
+  outline: none;
+}
+#discoveryApp #main-content h1,
+#discoveryApp #main-content h2,
+#discoveryApp #main-content h3,
+#discoveryApp #main-content p {
+  overflow-wrap: anywhere;
+}
+#discoveryApp .matrix:before,
+#discoveryApp .matrix:after {
+  z-index: 1;
+}
+#discoveryApp .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(230px, 1fr);
+  gap: 35px;
+  align-items: center;
+  padding-block: 18px 34px;
+}
+#discoveryApp .hero h1 {
+  font-size: clamp(2.3rem, 3.35vw, 3.65rem);
+  line-height: 1.13;
+  max-inline-size: 720px;
+  letter-spacing: -0.05em;
+}
+#discoveryApp .hero h1 em {
+  font-style: normal;
+  color: var(--discovery-violet);
+}
+#discoveryApp .hero p {
+  max-inline-size: 570px;
+  margin-block: 20px 22px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+#discoveryApp .hero .chips {
+  margin-block-start: 22px;
+}
+#discoveryApp .discovery-discovery-orbit {
+  position: relative;
+  aspect-ratio: 1;
+  inline-size: 100%;
+  max-inline-size: 330px;
+  margin-inline: auto;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+}
+#discoveryApp .discovery-orbit-ring {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid var(--discovery-line);
+  border-radius: 50%;
+  animation: discovery-orbit 48s linear infinite;
+}
+#discoveryApp .discovery-orbit-ring:before {
+  content: "";
+  position: absolute;
+  inline-size: 10px;
+  block-size: 10px;
+  border: 3px solid var(--discovery-fog);
+  background: var(--discovery-cyan);
+  border-radius: 50%;
+  inset-block-start: 10%;
+  inset-inline-start: 12%;
+}
+#discoveryApp .discovery-orbit-ring.second {
+  inset: 25%;
+  animation-direction: reverse;
+  animation-duration: 35s;
+  border-style: dashed;
+  border-color: color-mix(
+    in srgb,
+    var(--discovery-violet) 30%,
+    var(--discovery-white)
+  );
+}
+#discoveryApp .discovery-orbit-ring.second:before {
+  background: var(--discovery-magenta);
+  inset-block-start: 80%;
+  inset-inline-start: 84%;
+}
+#discoveryApp .discovery-orbit-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-radius: 24px;
+  inline-size: 130px;
+  block-size: 130px;
+  box-shadow: var(--discovery-shadow);
+  z-index: 1;
+}
+#discoveryApp .discovery-orbit-center svg {
+  inline-size: 33px;
+  block-size: 33px;
+  color: var(--discovery-blue);
+}
+#discoveryApp .discovery-orbit-center strong {
+  font-size: 1.15rem;
+  color: var(--discovery-indigo);
+  letter-spacing: -0.02em;
+}
+#discoveryApp .discovery-orbit-center span {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--discovery-violet);
+  font-weight: 700;
+}
+#discoveryApp .discovery-orbit-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--discovery-white);
+  padding: 11px 16px;
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 3px solid
+    var(--discovery-card-accent, var(--discovery-blue));
+  border-radius: 10px;
+  font-size: 0.76rem;
+  color: var(--discovery-indigo);
+  font-weight: 600;
+  box-shadow: var(--discovery-shadow);
+  z-index: 2;
+  animation: discovery-float 5s ease-in-out infinite;
+}
+#discoveryApp .discovery-orbit-chip.one {
+  inset-block-start: 7%;
+  inset-inline-start: 5%;
+  --discovery-card-accent: var(--discovery-blue);
+}
+#discoveryApp .discovery-orbit-chip.two {
+  inset-block-start: 48%;
+  inset-inline-end: -10%;
+  --discovery-card-accent: var(--discovery-violet);
+  animation-delay: -2s;
+}
+#discoveryApp .discovery-orbit-chip.three {
+  inset-block-end: 5%;
+  inset-inline-start: 7%;
+  --discovery-card-accent: var(--discovery-cyan);
+  animation-delay: -3s;
+}
+#discoveryApp .hero-footnote {
+  text-align: center;
+  font-size: 0.67rem;
+  color: var(--discovery-indigo);
+  margin-block-start: -3px;
+}
+#discoveryApp .stage-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-block: 6px 30px;
+}
+#discoveryApp .stage-tile {
+  padding: 13px 15px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-block-start: 3px solid var(--discovery-accent, var(--discovery-blue));
+  border-radius: 9px;
+  text-align: start;
+  color: var(--discovery-ink);
+  position: relative;
+}
+#discoveryApp .stage-tile small {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--discovery-violet);
+  display: block;
+  margin-block-end: 4px;
+}
+#discoveryApp .stage-tile strong {
+  font-size: 0.84rem;
+  color: var(--discovery-indigo);
+  display: block;
+}
+#discoveryApp .stage-tile span {
+  font-size: 0.7rem;
+  color: var(--discovery-muted);
+}
+#discoveryApp .stage-tile:hover {
+  background: var(--discovery-lavender);
+}
+#discoveryApp .stage-tile:hover span {
+  color: var(--discovery-ink);
+}
+#discoveryApp .how-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#discoveryApp .how-list li {
+  display: flex;
+  gap: 12px;
+  margin-block: 20px;
+}
+#discoveryApp .how-list .count {
+  display: grid;
+  place-items: center;
+  background: var(--discovery-lavender);
+  color: var(--discovery-violet);
+  font-size: 0.73rem;
+  font-weight: 700;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+#discoveryApp .how-list strong {
+  font-size: 0.88rem;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .how-list p {
+  font-size: 0.83rem;
+  margin-block-start: 4px;
+}
+#discoveryApp .mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-block-end: 24px;
+}
+#discoveryApp .stat {
+  padding: 17px 20px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 3px solid var(--discovery-accent, var(--discovery-cyan));
+  border-radius: 12px;
+}
+#discoveryApp .stat span {
+  display: block;
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  color: var(--discovery-indigo);
+  text-transform: uppercase;
+}
+#discoveryApp .stat strong {
+  font-size: 1.85rem;
+  color: var(--discovery-blue);
+  font-weight: 650;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+#discoveryApp .stat small {
+  font-size: 0.73rem;
+  color: var(--discovery-muted);
+  margin-inline-start: 7px;
+}
+#discoveryApp .journey-list {
+  display: grid;
+  gap: 14px;
+}
+#discoveryApp .journey-card {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 3px solid var(--discovery-cyan);
+  border-radius: 13px;
+  background: var(--discovery-white);
+}
+#discoveryApp .journey-card .step-number {
+  display: grid;
+  place-items: center;
+  inline-size: 32px;
+  block-size: 32px;
+  background: var(--discovery-lavender);
+  color: var(--discovery-indigo);
+  border-radius: 9px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+#discoveryApp .journey-card h3 {
+  margin-block-end: 7px;
+}
+#discoveryApp .journey-card p {
+  font-size: 0.85rem;
+  margin-block: 7px;
+}
+#discoveryApp .journey-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-block: 12px;
+}
+#discoveryApp .journey-card .button-row {
+  margin-block-start: 15px;
+}
+#discoveryApp .jtbd-sentence {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--discovery-indigo);
+  padding: 20px;
+  background: var(--discovery-lavender);
+  border-radius: 12px;
+  margin-block-start: 20px;
+}
+#discoveryApp .jtbd-sentence b {
+  color: var(--discovery-violet);
+}
+#discoveryApp .prompt-list {
+  padding-inline-start: 20px;
+  font-size: 0.87rem;
+  line-height: 1.65;
+  margin-block: 13px 0;
+}
+#discoveryApp .prompt-list li + li {
+  margin-block-start: 12px;
+}
+#discoveryApp .gate-list {
+  padding: 0;
+  margin: 12px 0 0;
+  list-style: none;
+}
+#discoveryApp .gate-list li {
+  font-size: 0.83rem;
+  padding-block: 8px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+#discoveryApp .gate-list li:before {
+  content: "○";
+  color: var(--discovery-violet);
+  font-weight: 700;
+}
+#discoveryApp .gate-list li.pass:before {
+  content: "✓";
+  color: var(--discovery-blue);
+}
+#discoveryApp .cap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+#discoveryApp .cap-card {
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 4px solid var(--discovery-accent, var(--discovery-blue));
+  border-radius: 14px;
+  padding: 21px;
+  text-align: start;
+  background: var(--discovery-white);
+  color: var(--discovery-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+#discoveryApp .cap-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--discovery-shadow);
+}
+#discoveryApp .cap-icon {
+  inline-size: 39px;
+  block-size: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--discovery-lavender);
+  color: var(--discovery-violet);
+  margin-block-end: 15px;
+}
+#discoveryApp .cap-card .eyebrow {
+  font-size: 0.61rem;
+  margin-block-end: 8px;
+}
+#discoveryApp .cap-card h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-block-end: 10px;
+}
+#discoveryApp .cap-card p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  flex: 1;
+}
+#discoveryApp .cap-card .cap-action {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--discovery-blue);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-block-start: 18px;
+}
+#discoveryApp .opp-list {
+  display: grid;
+  gap: 15px;
+}
+#discoveryApp .opp-card {
+  padding: 21px;
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 4px solid var(--discovery-blue);
+  background: var(--discovery-white);
+  border-radius: 14px;
+}
+#discoveryApp .opp-card.selected {
+  border-inline-start-color: var(--discovery-violet);
+}
+#discoveryApp .opp-card h3 {
+  margin-block-end: 9px;
+}
+#discoveryApp .opp-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  justify-content: space-between;
+}
+#discoveryApp .opp-card p {
+  font-size: 0.87rem;
+  line-height: 1.6;
+  margin-block: 9px;
+}
+#discoveryApp .opp-card .button-row {
+  margin-block-start: 15px;
+}
+#discoveryApp .opp-kpi {
+  background: var(--discovery-fog);
+  border-radius: 9px;
+  padding: 10px 13px;
+  margin-block: 13px;
+  font-size: 0.81rem;
+}
+#discoveryApp .score-badge {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 65px;
+  min-block-size: 65px;
+  background: var(--discovery-lavender);
+  color: var(--discovery-violet);
+  border-radius: 13px;
+}
+#discoveryApp .score-badge strong {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+#discoveryApp .score-badge small {
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  margin-block-start: 5px;
+}
+#discoveryApp .section-tabs {
+  display: flex;
+  gap: 3px;
+  background: var(--discovery-lavender);
+  padding: 5px;
+  border-radius: 11px;
+  inline-size: fit-content;
+  margin-block-end: 24px;
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+#discoveryApp .section-tabs button {
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: var(--discovery-indigo);
+  font-weight: 600;
+  white-space: nowrap;
+}
+#discoveryApp .section-tabs button.active {
+  background: var(--discovery-white);
+  color: var(--discovery-blue);
+  box-shadow: 0 2px 8px
+    color-mix(in srgb, var(--discovery-indigo) 8%, transparent);
+}
+#discoveryApp .range-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(110px, 1fr) 48px;
+  align-items: center;
+  gap: 14px;
+  margin-block: 16px;
+}
+#discoveryApp .range-row label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .range-row small {
+  font-size: 0.71rem;
+  display: block;
+  color: var(--discovery-ink);
+  font-weight: 400;
+  margin-block-start: 3px;
+}
+#discoveryApp .range-row output {
+  font-size: 0.81rem;
+  font-weight: 700;
+  color: var(--discovery-violet);
+  text-align: end;
+}
+#discoveryApp .range-row input[type="range"] {
+  inline-size: 100%;
+  accent-color: var(--discovery-blue);
+  min-block-size: 24px;
+  cursor: pointer;
+}
+#discoveryApp .weight-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(70px, 0.65fr) 45px;
+  gap: 10px;
+  align-items: center;
+  margin-block: 14px;
+  font-size: 0.79rem;
+}
+#discoveryApp .weight-row input {
+  accent-color: var(--discovery-blue);
+  inline-size: 100%;
+  min-block-size: 24px;
+}
+#discoveryApp .weight-row output {
+  color: var(--discovery-violet);
+  font-weight: 700;
+  text-align: end;
+}
+#discoveryApp .matrix-wrap {
+  position: relative;
+  padding: 18px 8px 36px 32px;
+}
+#discoveryApp .matrix {
+  position: relative;
+  aspect-ratio: 1.4;
+  border: 1px solid var(--discovery-muted);
+  background: var(--discovery-white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#discoveryApp .matrix:before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block: 0;
+  border-inline-start: 1px dashed var(--discovery-line);
+}
+#discoveryApp .matrix:after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline: 0;
+  border-block-start: 1px dashed var(--discovery-line);
+  pointer-events: none;
+}
+#discoveryApp .matrix-quarter {
+  position: absolute;
+  inline-size: 50%;
+  block-size: 50%;
+  padding: 12px;
+  font-size: 0.59rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--discovery-indigo);
+  font-weight: 700;
+  pointer-events: none;
+}
+#discoveryApp .matrix-quarter.q1 {
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  background: var(--discovery-fog);
+}
+#discoveryApp .matrix-quarter.q2 {
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  background: var(--discovery-lavender);
+}
+#discoveryApp .matrix-quarter.q3 {
+  inset-block-start: 50%;
+  inset-inline-start: 0;
+  background: var(--discovery-white);
+  display: flex;
+  align-items: flex-end;
+}
+#discoveryApp .matrix-quarter.q4 {
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  background: var(--discovery-fog);
+  display: flex;
+  align-items: flex-end;
+}
+#discoveryApp .matrix-point {
+  position: absolute;
+  inset-inline-start: var(--discovery-x);
+  inset-block-end: var(--discovery-y);
+  transform: translate(-50%, 50%);
+  inline-size: 33px;
+  block-size: 33px;
+  border: 2px solid var(--discovery-white);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--discovery-blue);
+  color: var(--discovery-white);
+  font-weight: 700;
+  font-size: 0.77rem;
+  z-index: 2;
+  box-shadow: 0 0 0 1px var(--discovery-blue);
+  transition:
+    inset-inline-start 0.25s,
+    inset-block-end 0.25s;
+}
+#discoveryApp .matrix-point.selected {
+  background: var(--discovery-violet);
+  box-shadow: 0 0 0 2px var(--discovery-violet);
+}
+#discoveryApp .matrix-point:hover,
+#discoveryApp .matrix-point:focus {
+  z-index: 4;
+  outline: 3px solid var(--discovery-indigo);
+  outline-offset: 3px;
+}
+#discoveryApp .axis-x {
+  position: absolute;
+  inset-block-end: 4px;
+  inset-inline-start: 32px;
+  inset-inline-end: 8px;
+  text-align: center;
+  color: var(--discovery-indigo);
+  font-size: 0.7rem;
+}
+#discoveryApp .axis-y {
+  position: absolute;
+  inset-inline-start: 8px;
+  inset-block-start: 50%;
+  inline-size: 150px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  color: var(--discovery-indigo);
+  font-size: 0.7rem;
+}
+#discoveryApp .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--discovery-line);
+  border-radius: 12px;
+  background: var(--discovery-white);
+}
+#discoveryApp table {
+  border-collapse: collapse;
+  inline-size: 100%;
+  font-size: 0.82rem;
+  text-align: start;
+}
+#discoveryApp thead {
+  background: var(--discovery-lavender);
+  color: var(--discovery-indigo);
+}
+#discoveryApp th {
+  font-weight: 650;
+  font-size: 0.74rem;
+  padding: 13px 14px;
+  white-space: nowrap;
+}
+#discoveryApp td {
+  padding: 15px 14px;
+  border-block-start: 1px solid var(--discovery-line);
+  vertical-align: top;
+}
+#discoveryApp td p {
+  font-size: 0.75rem;
+  margin-block-start: 4px;
+}
+#discoveryApp tbody tr:hover {
+  background: var(--discovery-fog);
+}
+#discoveryApp td:first-child {
+  font-weight: 600;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .table-title {
+  min-inline-size: 195px;
+}
+#discoveryApp .table-title button {
+  text-align: start;
+}
+#discoveryApp .score-number {
+  font-size: 1.04rem;
+  color: var(--discovery-violet);
+  font-weight: 700;
+  white-space: nowrap;
+}
+#discoveryApp .pilot-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-block-end: 24px;
+}
+#discoveryApp .pilot-picker button {
+  flex: 1;
+  min-inline-size: 160px;
+  text-align: start;
+}
+#discoveryApp .pilot-picker button.active {
+  border-color: var(--discovery-violet);
+  background: var(--discovery-lavender);
+  color: var(--discovery-violet);
+}
+#discoveryApp .check-card {
+  padding: 16px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-radius: 11px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+  margin-block-start: 12px;
+}
+#discoveryApp .check-card h4 {
+  font-size: 0.87rem;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .check-card p {
+  font-size: 0.76rem;
+  margin-block-start: 5px;
+}
+#discoveryApp .check-card .field {
+  gap: 5px;
+}
+#discoveryApp .check-card input,
+#discoveryApp .check-card select {
+  font-size: 0.8rem;
+  padding: 9px;
+  min-block-size: 39px;
+}
+#discoveryApp .check-card .evidence {
+  grid-column: 1/-1;
+}
+#discoveryApp .readiness {
+  background: var(--discovery-lavender);
+  padding: 20px;
+  border-radius: 13px;
+}
+#discoveryApp .readiness h3 {
+  color: var(--discovery-violet);
+  margin-block-end: 8px;
+}
+#discoveryApp .readiness .gate-list {
+  margin-block-start: 14px;
+}
+#discoveryApp .ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+#discoveryApp .eco-card {
+  display: flex;
+  flex-direction: column;
+}
+#discoveryApp .eco-card h3 {
+  font-size: 1.13rem;
+  margin-block-end: 6px;
+}
+#discoveryApp .eco-card .products {
+  font-size: 0.78rem;
+  color: var(--discovery-indigo);
+  font-weight: 600;
+  line-height: 1.75;
+  margin-block-start: 10px;
+}
+#discoveryApp .eco-card .question {
+  font-size: 0.85rem;
+  margin-block: 15px 0;
+  flex: 1;
+}
+#discoveryApp .eco-card .source-link {
+  font-size: 0.71rem;
+  line-height: 1.5;
+}
+#discoveryApp .eco-card .eyebrow {
+  font-size: 0.62rem;
+}
+#discoveryApp .method-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+#discoveryApp .method-steps .card {
+  padding: 19px;
+}
+#discoveryApp .method-steps strong {
+  display: block;
+  color: var(--discovery-indigo);
+  font-size: 0.89rem;
+  margin-block: 12px 0 8px;
+}
+#discoveryApp .method-steps p {
+  font-size: 0.79rem;
+  line-height: 1.65;
+}
+#discoveryApp .source-list {
+  margin: 0;
+  padding-inline-start: 23px;
+  overflow-wrap: anywhere;
+}
+#discoveryApp .source-list li {
+  padding-block: 11px;
+  border-block-end: 1px solid var(--discovery-line);
+  font-size: 0.81rem;
+}
+#discoveryApp .source-list li small {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--discovery-ink);
+  margin-block-start: 4px;
+}
+#discoveryApp .report {
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-radius: 18px;
+  padding: 30px;
+  overflow-wrap: anywhere;
+}
+#discoveryApp .report-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: flex-start;
+  border-block-end: 2px solid var(--discovery-blue);
+  padding-block-end: 20px;
+  margin-block-end: 24px;
+}
+#discoveryApp .report-head h2 {
+  font-size: 1.7rem;
+}
+#discoveryApp .report-head p {
+  font-size: 0.88rem;
+  margin-block-start: 8px;
+}
+#discoveryApp .report-head img {
+  inline-size: 88px;
+  block-size: 88px;
+  object-fit: contain;
+}
+#discoveryApp .report h3 {
+  margin-block: 24px 12px;
+}
+#discoveryApp .report h4 {
+  color: var(--discovery-indigo);
+  margin-block: 14px 6px;
+}
+#discoveryApp .report p,
+#discoveryApp .report li {
+  font-size: 0.86rem;
+}
+#discoveryApp .report dl {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  font-size: 0.83rem;
+  gap: 9px 15px;
+  margin-block: 16px;
+}
+#discoveryApp .report dt {
+  font-weight: 600;
+  color: var(--discovery-indigo);
+}
+#discoveryApp .report dd {
+  margin: 0;
+  white-space: pre-wrap;
+}
+#discoveryApp .report .report-case {
+  padding-block: 12px 18px;
+  border-block-end: 1px solid var(--discovery-line);
+}
+#discoveryApp .report table {
+  font-size: 0.74rem;
+}
+#discoveryApp .report td,
+#discoveryApp .report th {
+  padding: 9px;
+}
+#discoveryApp .report .tagline {
+  color: var(--discovery-violet);
+  font-weight: 600;
+  margin-block-start: 28px;
+}
+#discoveryApp .report .legal {
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+#discoveryApp .report .unfilled {
+  color: var(--discovery-muted);
+  font-style: italic;
+}
+#discoveryApp .report .report-case pre {
+  font-size: 0.74rem;
+}
+#discoveryApp .report summary {
+  font-size: 0.82rem;
+  color: var(--discovery-blue);
+  cursor: pointer;
+  font-weight: 600;
+  margin-block: 13px;
+}
+#discoveryApp .report .report-jtbd {
+  padding: 14px;
+  background: var(--discovery-lavender);
+  border-radius: 9px;
+}
+#discoveryApp .report details[open] {
+  padding-block-end: 12px;
+}
+#discoveryApp .report-demo {
+  padding: 11px;
+  border: 2px solid var(--discovery-violet);
+  border-radius: 8px;
+  color: var(--discovery-violet);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-block-end: 18px;
+}
+#discoveryApp dialog {
+  border: 1px solid var(--discovery-line);
+  border-radius: 20px;
+  padding: 0;
+  background: var(--discovery-white);
+  color: var(--discovery-ink);
+  box-shadow: 0 25px 100px
+    color-mix(in srgb, var(--discovery-indigo) 25%, transparent);
+  max-inline-size: min(880px, calc(100vw - 32px));
+  inline-size: 880px;
+  max-block-size: 90vh;
+  overflow: auto;
+}
+#discoveryApp dialog::backdrop {
+  background: color-mix(in srgb, var(--discovery-indigo) 33%, transparent);
+  backdrop-filter: blur(4px);
+}
+#discoveryApp .dialog-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 24px 26px 18px;
+  border-block-end: 1px solid var(--discovery-line);
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--discovery-white);
+  z-index: 2;
+}
+#discoveryApp .dialog-header > div {
+  flex: 1;
+}
+#discoveryApp .dialog-header h2 {
+  font-size: 1.5rem;
+}
+#discoveryApp .dialog-header p {
+  font-size: 0.85rem;
+  margin-block-start: 8px;
+}
+#discoveryApp .dialog-header .eyebrow {
+  margin-block-end: 5px;
+}
+#discoveryApp .dialog-body {
+  padding: 24px 26px;
+}
+#discoveryApp .dialog-footer {
+  padding: 18px 26px;
+  border-block-start: 1px solid var(--discovery-line);
+  background: var(--discovery-white);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  position: sticky;
+  inset-block-end: 0;
+  z-index: 2;
+}
+#discoveryApp .dialog-footer small {
+  margin-inline-end: auto;
+  align-self: center;
+  color: var(--discovery-muted);
+  font-size: 0.72rem;
+}
+#discoveryApp .dialog-section + .dialog-section {
+  border-block-start: 1px solid var(--discovery-line);
+  padding-block-start: 24px;
+  margin-block-start: 24px;
+}
+#discoveryApp .dialog-section h3 {
+  margin-block-end: 17px;
+}
+#discoveryApp .dialog-small {
+  inline-size: 580px;
+}
+#discoveryApp .export-choices {
+  display: grid;
+  gap: 13px;
+}
+#discoveryApp .export-choice {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px;
+  background: var(--discovery-white);
+  border: 1px solid var(--discovery-line);
+  border-inline-start: 4px solid var(--discovery-blue);
+  border-radius: 12px;
+  text-align: start;
+  color: var(--discovery-ink);
+}
+#discoveryApp .export-choice:hover {
+  background: var(--discovery-fog);
+}
+#discoveryApp .export-choice strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--discovery-blue);
+}
+#discoveryApp .export-choice small {
+  display: block;
+  font-size: 0.78rem;
+  margin-block-start: 5px;
+}
+#discoveryApp .export-choice > .icon {
+  inline-size: 27px;
+  block-size: 27px;
+  color: var(--discovery-violet);
+}
+#discoveryApp .toast {
+  position: fixed;
+  inset-block-end: 24px;
+  inset-inline-end: 24px;
+  z-index: 100;
+  max-inline-size: min(470px, calc(100vw - 32px));
+  background: var(--discovery-indigo);
+  color: var(--discovery-white);
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  box-shadow: var(--discovery-shadow);
+  animation: discovery-appear 0.2s ease;
+}
+#discoveryApp .noscript {
+  padding: 25px;
+  border: 2px solid var(--discovery-violet);
+  margin: 30px;
+  background: var(--discovery-white);
+}
+#discoveryApp .mobile-shade {
+  display: none;
+}
+#discoveryApp .dialog-info .prompt-list {
+  margin-block: 12px 22px;
+}
+#discoveryApp .radio-legend {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 0.73rem;
+  padding: 13px;
+  background: var(--discovery-lavender);
+  border-radius: 9px;
+}
+#discoveryApp .no-results {
+  padding: 30px;
+  text-align: center;
+  color: var(--discovery-indigo);
+  font-size: 0.9rem;
+}
+#discoveryApp .safe-check {
+  padding: 15px;
+  border: 1px solid var(--discovery-line);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+#discoveryApp .safe-check input {
+  accent-color: var(--discovery-blue);
+  inline-size: 20px;
+  block-size: 20px;
+  flex-shrink: 0;
+  margin-block-start: 2px;
+}
+#discoveryApp .source-badge {
+  display: inline-block;
+  font-size: 0.69rem;
+  color: var(--discovery-violet);
+  font-weight: 600;
+}
+#discoveryApp .activity-count {
+  background: var(--discovery-lavender);
+  color: var(--discovery-violet);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+  margin-inline-start: 5px;
+}
+@keyframes discovery-appear {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes discovery-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes discovery-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  #discoveryApp {
+    color-scheme: light dark;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #discoveryApp *,
+  #discoveryApp *:before,
+  #discoveryApp *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+#discoveryApp .reduce-motion *,
+#discoveryApp .reduce-motion *:before,
+#discoveryApp .reduce-motion *:after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+@media (min-width: 1600px) {
+  #discoveryApp .hero h1 {
+    font-size: 3.55rem;
+  }
+}
+@media (max-width: 1190px) {
+  #discoveryApp {
+    --discovery-sidebar: 216px;
+  }
+  #discoveryApp .topbar {
+    padding-inline-end: 18px;
+  }
+  #discoveryApp .product-name {
+    padding-inline-start: 15px;
+  }
+  #discoveryApp .save-state {
+    display: none;
+  }
+  #discoveryApp .workspace-inner {
+    padding-inline: 25px;
+  }
+  #discoveryApp .hero {
+    gap: 15px;
+  }
+  #discoveryApp .hero h1 {
+    font-size: 2.6rem;
+  }
+  #discoveryApp .discovery-discovery-orbit {
+    max-inline-size: 275px;
+  }
+  #discoveryApp .discovery-orbit-chip {
+    padding: 9px 12px;
+    font-size: 0.68rem;
+  }
+  #discoveryApp .cap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #discoveryApp .split {
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 1fr);
+  }
+  #discoveryApp .method-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #discoveryApp .top-actions .btn {
+    font-size: 0.8rem;
+    padding-inline: 12px;
+  }
+  #discoveryApp .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 980px) {
+  #discoveryApp {
+    --discovery-sidebar: 195px;
+  }
+  #discoveryApp .sidebar {
+    padding-inline: 10px;
+  }
+  #discoveryApp .nav-button {
+    padding-inline: 9px;
+    font-size: 0.78rem;
+    gap: 8px;
+  }
+  #discoveryApp .brand {
+    min-inline-size: 182px;
+  }
+  #discoveryApp .brand-name {
+    font-size: 0.91rem;
+  }
+  #discoveryApp .brand-name span {
+    font-size: 0.57rem;
+  }
+  #discoveryApp .brand img {
+    inline-size: 57px;
+    block-size: 57px;
+  }
+  #discoveryApp .hero {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .hero-art {
+    display: none;
+  }
+  #discoveryApp .hero h1 {
+    font-size: 2.6rem;
+  }
+  #discoveryApp .split {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .stage-ribbon {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #discoveryApp .product-name span {
+    display: none;
+  }
+  #discoveryApp .top-actions .focus-toggle {
+    display: none;
+  }
+  #discoveryApp .ecosystem-grid {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .page-intro {
+    flex-direction: column;
+  }
+  #discoveryApp .footer-small {
+    display: none;
+  }
+  #discoveryApp .session-progress {
+    display: none;
+  }
+  #discoveryApp .hero p {
+    max-inline-size: 100%;
+  }
+}
+@media (max-width: 740px) {
+  #discoveryApp {
+    --discovery-header: 74px;
+    --discovery-sidebar: 264px;
+  }
+  #discoveryApp .topbar {
+    min-block-size: 74px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  #discoveryApp .mobile-menu {
+    display: inline-flex;
+  }
+  #discoveryApp .brand {
+    min-inline-size: 0;
+    gap: 0;
+  }
+  #discoveryApp .brand img {
+    inline-size: 54px;
+    block-size: 54px;
+  }
+  #discoveryApp .brand-name {
+    font-size: 0.81rem;
+  }
+  #discoveryApp .brand-name span {
+    font-size: 0.49rem;
+  }
+  #discoveryApp .product-name {
+    display: none;
+  }
+  #discoveryApp .top-actions {
+    gap: 4px;
+    margin-inline-start: auto;
+  }
+  #discoveryApp .top-actions .guide-toggle {
+    display: none;
+  }
+  #discoveryApp .top-actions .btn {
+    padding: 9px 11px;
+  }
+  #discoveryApp .top-actions .motion-toggle {
+    display: none;
+  }
+  #discoveryApp .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s;
+    box-shadow: var(--discovery-shadow);
+    inset-block-start: 74px;
+  }
+  #discoveryApp .nav-open .sidebar {
+    transform: translateX(0);
+  }
+  #discoveryApp .nav-open .mobile-shade {
+    display: block;
+    position: fixed;
+    inset: 74px 0 0;
+    background: color-mix(in srgb, var(--discovery-indigo) 25%, transparent);
+    z-index: 14;
+  }
+  #discoveryApp .workspace {
+    margin-inline-start: 0;
+  }
+  #discoveryApp .workspace-inner {
+    padding: 19px 18px 28px;
+  }
+  #discoveryApp .contextbar {
+    margin-block-end: 14px;
+  }
+  #discoveryApp .breadcrumb {
+    font-size: 0.6rem;
+  }
+  #discoveryApp .client-pill {
+    max-inline-size: 155px;
+    font-size: 0.68rem;
+  }
+  #discoveryApp .hero {
+    padding-block: 14px 20px;
+  }
+  #discoveryApp .hero h1 {
+    font-size: 2.3rem;
+  }
+  #discoveryApp .hero p {
+    font-size: 0.94rem;
+  }
+  #discoveryApp .card {
+    padding: 20px;
+  }
+  #discoveryApp .fields {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .full {
+    grid-column: auto;
+  }
+  #discoveryApp .hero .chips .tag {
+    font-size: 0.66rem;
+  }
+  #discoveryApp .mini-stats {
+    gap: 9px;
+  }
+  #discoveryApp .stat {
+    padding: 12px;
+  }
+  #discoveryApp .stat span {
+    font-size: 0.58rem;
+  }
+  #discoveryApp .stat strong {
+    font-size: 1.5rem;
+  }
+  #discoveryApp .stat small {
+    display: block;
+    margin-inline-start: 0;
+    font-size: 0.65rem;
+  }
+  #discoveryApp .cap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #discoveryApp .cap-card {
+    padding: 17px;
+  }
+  #discoveryApp .cap-card p {
+    font-size: 0.79rem;
+  }
+  #discoveryApp .cap-card .cap-action {
+    font-size: 0.71rem;
+  }
+  #discoveryApp .cap-card h3 {
+    font-size: 0.95rem;
+  }
+  #discoveryApp .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .title-row {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  #discoveryApp .title-row h2 {
+    font-size: 1.1rem;
+  }
+  #discoveryApp .title-row .btn {
+    font-size: 0.76rem;
+    padding: 9px 11px;
+  }
+  #discoveryApp .footer {
+    padding: 12px 18px;
+    gap: 0;
+  }
+  #discoveryApp .footer-tagline {
+    font-size: 0.71rem;
+  }
+  #discoveryApp .footer a {
+    font-size: 0.7rem;
+  }
+  #discoveryApp .footer-brand img {
+    inline-size: 49px;
+    block-size: 49px;
+  }
+  #discoveryApp .footer > div:last-child {
+    padding-inline-start: 50px;
+  }
+  #discoveryApp .bottom-nav .step-note {
+    display: none;
+  }
+  #discoveryApp .bottom-nav .btn {
+    font-size: 0.79rem;
+  }
+  #discoveryApp .range-row {
+    grid-template-columns: 1fr 1fr 46px;
+    gap: 9px;
+  }
+  #discoveryApp .range-row label {
+    font-size: 0.77rem;
+  }
+  #discoveryApp .range-row small {
+    font-size: 0.66rem;
+  }
+  #discoveryApp .dialog-header {
+    padding: 19px 19px 15px;
+  }
+  #discoveryApp .dialog-body {
+    padding: 20px;
+  }
+  #discoveryApp .dialog-footer {
+    padding: 15px 18px;
+  }
+  #discoveryApp .dialog-footer small {
+    display: none;
+  }
+  #discoveryApp dialog {
+    max-block-size: 94vh;
+    max-inline-size: calc(100vw - 20px);
+    border-radius: 15px;
+  }
+  #discoveryApp .check-card {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .check-card .evidence {
+    grid-column: auto;
+  }
+  #discoveryApp .report {
+    padding: 21px;
+  }
+  #discoveryApp .report dl {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  #discoveryApp .report dd {
+    margin-block-end: 9px;
+  }
+  #discoveryApp .report-head h2 {
+    font-size: 1.4rem;
+  }
+  #discoveryApp .report-head img {
+    inline-size: 65px;
+    block-size: 65px;
+  }
+  #discoveryApp .method-steps {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .opp-top {
+    gap: 8px;
+  }
+  #discoveryApp .opp-card {
+    padding: 17px;
+  }
+  #discoveryApp .score-badge {
+    min-inline-size: 52px;
+    min-block-size: 55px;
+  }
+  #discoveryApp .hero .eyebrow {
+    font-size: 0.65rem;
+  }
+  #discoveryApp .stage-tile {
+    padding: 11px;
+  }
+  #discoveryApp .stage-tile span {
+    font-size: 0.66rem;
+  }
+  #discoveryApp .matrix-quarter {
+    font-size: 0.54rem;
+    padding: 8px;
+  }
+  #discoveryApp .toast {
+    inset-inline: 16px;
+    inset-block-end: 16px;
+  }
+  #discoveryApp .focus-mode .mobile-menu {
+    display: none;
+  }
+  #discoveryApp .focus-mode .top-actions .focus-toggle {
+    display: inline-flex;
+  }
+  #discoveryApp .focus-mode .brand-name {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  #discoveryApp .cap-grid {
+    grid-template-columns: 1fr;
+  }
+  #discoveryApp .brand-name span {
+    display: none;
+  }
+  #discoveryApp .top-actions .btn .wide-label {
+    display: none;
+  }
+  #discoveryApp .hero h1 {
+    font-size: 2.05rem;
+  }
+  #discoveryApp .mini-stats .stat {
+    padding: 10px;
+  }
+  #discoveryApp .topbar {
+    gap: 3px;
+  }
+  #discoveryApp .brand img {
+    inline-size: 50px;
+    block-size: 50px;
+  }
+  #discoveryApp .brand-name {
+    font-size: 0.76rem;
+  }
+  #discoveryApp .section-tabs button {
+    padding-inline: 12px;
+  }
+  #discoveryApp .client-pill {
+    max-inline-size: 130px;
+  }
+}
+@media (max-width: 740px) {
+  #discoveryApp .notice .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #discoveryApp .notice .grow {
+    inline-size: 100%;
+  }
+  #discoveryApp .notice .btn {
+    align-self: flex-start;
+  }
+}
+#discoveryApp #print-root {
+  display: none;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+  #discoveryApp {
+    --discovery-shadow: none;
+    --discovery-line: var(--discovery-muted);
+  }
+  #discoveryApp {
+    background: var(--discovery-white);
+    font-size: 10pt;
+    color: var(--discovery-ink);
+  }
+  #discoveryApp > header,
+  #discoveryApp > aside,
+  #discoveryApp .workspace,
+  #discoveryApp .mobile-shade,
+  #discoveryApp dialog,
+  #discoveryApp .toast,
+  #discoveryApp .skip,
+  #discoveryApp noscript {
+    display: none !important;
+  }
+  #discoveryApp #print-root {
+    display: block !important;
+  }
+  #discoveryApp .report {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  #discoveryApp .report h2 {
+    font-size: 20pt;
+  }
+  #discoveryApp .report h3 {
+    font-size: 13pt;
+    break-after: avoid;
+  }
+  #discoveryApp .report h4 {
+    font-size: 11pt;
+    break-after: avoid;
+  }
+  #discoveryApp .report p,
+  #discoveryApp .report li,
+  #discoveryApp .report dd,
+  #discoveryApp .report dt {
+    font-size: 9pt;
+  }
+  #discoveryApp .report .report-case {
+    break-inside: auto;
+  }
+  #discoveryApp .report-head,
+  #discoveryApp .report-jtbd,
+  #discoveryApp .report .tagline,
+  #discoveryApp tr {
+    break-inside: avoid;
+  }
+  #discoveryApp .report-head img {
+    inline-size: 80px;
+    block-size: 80px;
+  }
+  #discoveryApp .report dl {
+    grid-template-columns: 125px 1fr;
+  }
+  #discoveryApp .report dd {
+    margin: 0;
+  }
+  #discoveryApp .report a {
+    color: var(--discovery-blue);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+  #discoveryApp .report .table-wrap {
+    overflow: visible;
+  }
+  #discoveryApp .report th {
+    white-space: normal;
+  }
+  #discoveryApp .report table {
+    font-size: 8pt;
+  }
+  #discoveryApp .report td,
+  #discoveryApp .report th {
+    padding: 6px;
+  }
+  #discoveryApp .report details > * {
+    display: block !important;
+  }
+  #discoveryApp .report details > summary {
+    display: none;
+  }
+  #discoveryApp .report .button-row,
+  #discoveryApp .report .no-print {
+    display: none !important;
+  }
+  #discoveryApp * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+#discoveryApp {
+  --discovery-blue: var(--blue);
+  --discovery-violet: var(--violet);
+  --discovery-cyan: var(--cyan);
+  --discovery-indigo: var(--indigo-text);
+  --discovery-magenta: var(--magenta);
+  --discovery-fog: var(--bg);
+  --discovery-lavender: var(--surface-2);
+  --discovery-white: var(--surface);
+  --discovery-ink: var(--ink);
+  --discovery-muted: var(--muted);
+  --discovery-line: var(--line);
+  --discovery-soft: var(--surface-2);
+  --discovery-shadow: var(--shadow);
+  --discovery-font: var(--font);
+  --discovery-mono: var(--mono);
+  color-scheme: inherit;
+}
+#discoveryApp .footer {
+  display: none !important;
+}
+#discoveryApp .topbar {
+  position: sticky;
+  inset-block-start: var(--header-height);
+  z-index: 60;
+}
+#discoveryApp .topbar .brand {
+  display: none;
+}
+#discoveryApp .topbar .product-name {
+  padding-inline-start: 0;
+  border-inline-start: 0;
+}
+#discoveryApp .sidebar {
+  inset-block-start: calc(var(--header-height) + var(--discovery-header));
+  z-index: 55;
+}
+#discoveryApp .workspace {
+  min-block-size: calc(100vh - var(--header-height) - var(--discovery-header));
+}
+#discoveryApp .mobile-shade {
+  z-index: 54;
+}
+#discoveryApp .dialog {
+  z-index: 120;
+}
+html[data-theme="dark"] #discoveryApp {
+  --discovery-blue: var(--link);
+  --discovery-violet: var(--violet-text);
+  --discovery-cyan: var(--pos);
+  --discovery-indigo: var(--indigo-text);
+  --discovery-magenta: #f9a8d4;
+}
+html[data-theme="dark"] #discoveryApp .btn.primary,
+html[data-theme="dark"] #discoveryApp .nav-button.active .num,
+html[data-theme="dark"] #discoveryApp .filter.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+html[data-theme="dark"] #discoveryApp .nav-button.active {
+  color: var(--link);
+}
+@media print {
+  .tool-context {
+    display: none;
+  }
+}
