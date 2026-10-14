@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>AI Discovery Studio | Frontier Transformation Engineer</title>
+    <meta
+      name="description"
+      content="Oficina local para transformar desafios de negócio em oportunidades, prioridades e experimentos responsáveis."
+    />
+    <link
+      rel="canonical"
+      href="https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/ai-discovery-studio/"
+    />
+    <link rel="icon" href="../../assets/images/logo.png" />
+    <script src="../../assets/js/theme-init.js"></script>
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <link rel="stylesheet" href="../../assets/css/ai-discovery.css" />
+    <script src="../../assets/js/site.js" defer></script>
+    <script src="../../assets/js/ai-discovery-engine.js" defer></script>
+    <script src="../../assets/js/ai-discovery.js" defer></script>
+  </head>
+  <body data-page="tools">
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <div data-site-header></div>
+    <main id="main-content" tabindex="-1">
+      <div class="tool-context site-container">
+        <p class="page-breadcrumb">
+          <a href="../../">Início</a><span aria-hidden="true">/</span
+          ><a href="../">Ferramentas e diagnóstico</a
+          ><span aria-hidden="true">/</span>AI Discovery Studio
+        </p>
+      </div>
+      <script type="application/json" id="session-data">
+        null
+      </script>
+      <div id="discoveryApp" class="discovery-app">
+        <a class="skip" href="#discovery-content">Pular para o conteúdo</a>
+        <header class="topbar">
+          <button
+            class="btn icon-only mobile-menu"
+            data-action="menu"
+            aria-label="Abrir navegação"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <div class="brand">
+            <img
+              src="../../assets/images/logo.png"
+              alt="Símbolo original da NEIVA Cloud Solutions"
+              width="66"
+              height="66"
+            />
+            <div class="brand-name">NEIVA<span>CLOUD SOLUTIONS</span></div>
+          </div>
+          <div class="product-name">
+            <strong>AI Discovery Studio</strong
+            ><span>Do desafio à decisão.</span>
+          </div>
+          <div class="top-actions">
+            <div class="save-state" id="save-status" aria-live="polite">
+              <strong>SESSÃO LOCAL</strong>Exporte para guardar
+            </div>
+            <button
+              class="btn icon-only motion-toggle"
+              data-action="motion"
+              aria-label="Reduzir animações"
+              title="Reduzir animações"
+              aria-pressed="false"
+            >
+              ◌</button
+            ><button
+              class="btn subtle focus-toggle"
+              data-action="focus"
+              aria-pressed="false"
+            >
+              Modo foco</button
+            ><button class="btn guide-toggle" data-action="guide">Guia</button
+            ><button class="btn primary" data-action="export">
+              <span class="wide-label">Salvar / </span>Exportar
+            </button>
+          </div>
+        </header>
+        <div class="mobile-shade" data-action="menu-close"></div>
+        <aside
+          class="sidebar"
+          id="sidebar"
+          aria-label="Navegação e facilitação"
+        >
+          <div class="nav-label">JORNADA DE DESCOBERTA</div>
+          <nav id="journey-nav" aria-label="Etapas do discovery"></nav>
+          <div class="nav-label second">REPERTÓRIO PARA DECIDIR</div>
+          <nav aria-label="Conhecimento">
+            <button class="nav-button" data-route="ecosystem">
+              <span class="num">✧</span
+              ><span class="nav-copy">Ecossistema Microsoft</span></button
+            ><button class="nav-button" data-route="method">
+              <span class="num">?</span
+              ><span class="nav-copy">Método & referências</span>
+            </button>
+          </nav>
+          <div class="sidebar-bottom">
+            <section class="timer" aria-label="Cronômetro da atividade">
+              <span class="eyebrow">TIMEBOX DA ATIVIDADE</span>
+              <div class="timer-row">
+                <output
+                  class="timer-display"
+                  id="timer-display"
+                  aria-label="Tempo restante"
+                  >15:00</output
+                ><label class="caption"
+                  >min
+                  <input
+                    type="number"
+                    id="timer-minutes"
+                    min="1"
+                    max="180"
+                    value="15"
+                    aria-label="Duração da atividade em minutos"
+                /></label>
+              </div>
+              <div class="button-row">
+                <button
+                  class="btn small primary"
+                  data-action="timer-toggle"
+                  id="timer-toggle"
+                >
+                  Iniciar</button
+                ><button class="btn small" data-action="timer-reset">
+                  Reiniciar
+                </button>
+              </div>
+              <p
+                class="caption"
+                id="timer-note"
+                style="margin-block-start: 9px"
+              >
+                O tempo continua ao trocar de etapa.
+              </p>
+            </section>
+            <p class="sidebar-foot">
+              <span>Um facilitador. Uma conversa melhor.</span>Sem envio
+              automático de dados.<br />Exportações incluem as notas.
+            </p>
+          </div>
+        </aside>
+        <div class="workspace">
+          <div class="workspace-inner">
+            <div class="contextbar">
+              <span class="breadcrumb" id="breadcrumb">WORKSHOP / ALINHAR</span>
+              <div class="session-progress">
+                <div class="progress-track">
+                  <span
+                    id="session-progress-bar"
+                    style="inline-size: 0%"
+                  ></span>
+                </div>
+                <span id="session-progress-text">0/6 registros</span>
+              </div>
+              <span class="client-pill" id="client-pill">Nova sessão</span>
+            </div>
+            <div id="restore-banner" hidden></div>
+            <div id="demo-banner" class="notice" hidden>
+              <div class="button-row">
+                <div class="grow">
+                  <strong class="text-violet">EXEMPLO FICTÍCIO</strong>
+                  <p class="helper">
+                    Dados ilustrativos para testar a ferramenta. Não representam
+                    resultados de um cliente.
+                  </p>
+                </div>
+                <button class="btn small" data-action="new">
+                  Começar sessão em branco
+                </button>
+              </div>
+            </div>
+            <main id="discovery-content" tabindex="-1"></main>
+            <div class="bottom-nav" id="bottom-nav"></div>
+          </div>
+          <footer class="footer">
+            <div class="footer-brand">
+              <img
+                src="../../assets/images/logo.png"
+                width="52"
+                height="52"
+                alt="NEIVA Cloud Solutions"
+              />
+              <p class="footer-tagline">
+                Transformando complexidade em conhecimento.
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://www.neivacloudsolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >www.neivacloudsolutions.com</a
+              >
+              <div class="footer-small">
+                Ferramenta independente da NEIVA · alinhada a referências
+                Microsoft
+              </div>
+            </div>
+          </footer>
+        </div>
+        <dialog id="main-dialog" aria-labelledby="dialog-title"></dialog>
+        <dialog
+          id="confirm-dialog"
+          class="dialog-small"
+          aria-labelledby="confirm-title"
+        >
+          <div class="dialog-header">
+            <div>
+              <span class="eyebrow">CONFIRME A AÇÃO</span>
+              <h2 id="confirm-title">Confirmar</h2>
+            </div>
+          </div>
+          <div class="dialog-body"><p id="confirm-message"></p></div>
+          <div class="dialog-footer">
+            <button class="btn" id="confirm-cancel">Cancelar</button
+            ><button class="btn violet" id="confirm-accept">Continuar</button>
+          </div>
+        </dialog>
+        <div
+          id="toast"
+          class="toast"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+        <section id="print-root" aria-label="Síntese para impressão"></section>
+        <input
+          id="import-file"
+          type="file"
+          accept=".json,application/json"
+          hidden
+        />
+        <noscript
+          ><div class="noscript">
+            <h1>Ative o JavaScript para conduzir a sessão.</h1>
+            <p>
+              Esta ferramenta interativa funciona localmente no navegador. Não
+              requer conta nem conexão com serviços de IA. Abra o arquivo em uma
+              versão atual do Microsoft Edge ou Google Chrome.
+            </p>
+          </div></noscript
+        >
+      </div>
+    </main>
+    <div data-site-footer></div>
+    <div
+      class="site-status"
+      id="siteStatus"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+  </body>
+</html>

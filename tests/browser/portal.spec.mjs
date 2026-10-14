@@ -1,13 +1,21 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { text } from "node:stream/consumers";
+import { pathToFileURL } from "node:url";
 const guide = "copilot-studio/governanca/";
+const tools = "ferramentas/";
 const calculator = "ferramentas/calculadora-creditos/";
+const advisor = "ferramentas/agent-advisor/";
+const discovery = "ferramentas/ai-discovery-studio/";
 const pages = [
   ["home", "./"],
   ["studio", "copilot-studio/"],
   ["m365", "microsoft-365-copilot/"],
+  ["tools", tools],
   ["guide", guide],
   ["calculator", calculator],
+  ["advisor", advisor],
+  ["discovery", discovery],
 ];
 for (const [name, route] of pages) {
   test(`${name}: layouts e assets em cinco larguras e dois temas`, async ({
@@ -27,13 +35,19 @@ for (const [name, route] of pages) {
         await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
         await expect(page.locator("h1")).toBeVisible();
         if (name === "home")
-          await expect(page.locator(".hub-card")).toHaveCount(2);
+          await expect(page.locator(".hub-card")).toHaveCount(3);
+        if (name === "tools")
+          await expect(page.locator(".resource-section")).toHaveCount(3);
         if (name === "guide")
           await expect(page.locator("#questions .q")).toHaveCount(15);
         if (name === "calculator") {
           await page.locator('[data-select="cowork"]').check();
           await page.locator("#cowork-corp-users").fill("100");
         }
+        if (name === "advisor")
+          await expect(page.locator("#catGrid .cat-card")).toHaveCount(10);
+        if (name === "discovery")
+          await expect(page.locator("#journey-nav .nav-button")).toHaveCount(6);
         await expect(
           page.locator('.site-nav [aria-current="page"]'),
         ).toHaveCount(1);
@@ -66,8 +80,11 @@ for (const theme of ["light", "dark"]) {
       "./",
       "copilot-studio/",
       "microsoft-365-copilot/",
+      tools,
       guide,
       calculator,
+      advisor,
+      discovery,
     ]) {
       await page.goto(route);
       if (route === calculator) {
@@ -113,8 +130,8 @@ test("navegação móvel e tema compartilhado entre hubs e ferramenta", async ({
     .click();
   await expect(page).toHaveURL(new RegExp(`${guide}$`));
   await page.locator("#siteMenuBtn").click();
-  await page.locator('.site-nav [data-page="calculator"]').click();
-  await expect(page).toHaveURL(new RegExp(`${calculator}$`));
+  await page.locator('.site-nav [data-page="tools"]').click();
+  await expect(page).toHaveURL(new RegExp(`${tools}$`));
   await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
 });
 test("catálogo: busca sem acentos, nenhum resultado e links corretos", async ({
@@ -135,6 +152,65 @@ test("catálogo: busca sem acentos, nenhum resultado e links corretos", async ({
   await expect(page.locator('[data-select="cowork"]')).toBeChecked();
   await expect(page.locator("#form-cowork")).toBeVisible();
   await expect(page.locator("#form-standard")).toBeHidden();
+});
+test("Agent Advisor: filtra o catálogo, recomenda e exporta o diagnóstico", async ({
+  page,
+}) => {
+  await page.goto(advisor);
+  await page.locator("#catSearch").fill("Foundry");
+  expect(await page.locator(".cat-card:not(.hide)").count()).toBeGreaterThan(0);
+  await page.locator("#catSearch").fill("");
+  await page.locator('[data-path="build"]').click();
+  await page.locator('[data-nav="next"]').click();
+  for (let index = 0; index < 5; index += 1) {
+    await page.locator("#stepHost .opt").first().click();
+    await page.locator('[data-nav="next"]').click();
+  }
+  await expect(page.locator(".res-hero")).toBeVisible();
+  await expect(page).toHaveURL(/#p=build.*r=1/);
+  const download = page.waitForEvent("download");
+  await page.locator('[data-act="md"]').click();
+  expect((await download).suggestedFilename()).toBe(
+    "recomendacao-agentes-neiva.md",
+  );
+});
+test("AI Discovery Studio: muda de etapa e exporta a sessão local", async ({
+  page,
+}, testInfo) => {
+  await page.goto(discovery);
+  await page.locator("#local-save").check();
+  await expect(page.locator("#save-status")).toContainText("RASCUNHO LOCAL");
+  await page.locator('#journey-nav [data-route="understand"]').click();
+  await expect(page.locator("#discovery-content h1")).toContainText(
+    "Entenda o trabalho",
+  );
+  await page.locator('[data-action="new-journey"]').first().click();
+  await expect(page.locator("#main-dialog[open]")).toBeVisible();
+  await page
+    .locator('#main-dialog [data-action="close-dialog"]')
+    .first()
+    .click();
+  await page.locator('[data-action="export"]').first().click();
+  await expect(page.locator("#main-dialog[open]")).toContainText(
+    /exportação da sessão/i,
+  );
+  const download = page.waitForEvent("download");
+  await page.locator('[data-action="export-json"]').click();
+  await expect((await download).suggestedFilename()).toMatch(
+    /^NEIVA_AI_Discovery_.*\.json$/,
+  );
+  const standaloneDownload = page.waitForEvent("download");
+  await page.locator('[data-action="export-html"]').click();
+  const standalone = await standaloneDownload;
+  expect(standalone.suggestedFilename()).toMatch(
+    /^NEIVA_AI_Discovery_.*\.html$/,
+  );
+  const standaloneContent = await text(await standalone.createReadStream());
+  expect(standaloneContent).toContain('id="neiva-discovery-engine"');
+  const standalonePath = testInfo.outputPath("discovery-session.html");
+  await standalone.saveAs(standalonePath);
+  await page.goto(pathToFileURL(standalonePath).href);
+  await expect(page.locator("#discovery-content .page")).toHaveCount(1);
 });
 test("calculadora: todas as combinações e consolidação sem teto", async ({
   page,

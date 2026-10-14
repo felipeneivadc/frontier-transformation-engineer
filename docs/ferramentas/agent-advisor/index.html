@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Agent Advisor | Frontier Transformation Engineer</title>
+    <meta
+      name="description"
+      content="Diagnóstico guiado para escolher como usar ou construir agentes no ecossistema Microsoft."
+    />
+    <link
+      rel="canonical"
+      href="https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/agent-advisor/"
+    />
+    <link rel="icon" href="../../assets/images/logo.png" />
+    <script src="../../assets/js/theme-init.js"></script>
+    <link rel="stylesheet" href="../../assets/css/site.css" />
+    <link rel="stylesheet" href="../../assets/css/agent-advisor.css" />
+    <script src="../../assets/js/site.js" defer></script>
+    <script src="../../assets/js/agent-advisor-engine.js" defer></script>
+    <script src="../../assets/js/agent-advisor.js" defer></script>
+  </head>
+  <body data-page="tools">
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+    <div data-site-header></div>
+    <main id="main-content" tabindex="-1">
+      <div class="tool-context site-container">
+        <p class="page-breadcrumb">
+          <a href="../../">Início</a><span aria-hidden="true">/</span
+          ><a href="../">Ferramentas e diagnóstico</a
+          ><span aria-hidden="true">/</span>Agent Advisor
+        </p>
+      </div>
+      <div id="advisorApp" class="advisor-app">
+        <!-- ======================= HEADER ======================= -->
+        <header class="top">
+          <div class="wrap">
+            <a
+              class="logo"
+              href="#topo"
+              data-logo="light"
+              aria-label="NEIVA Cloud Solutions — início"
+            ></a>
+            <button
+              class="menu-btn"
+              aria-label="Abrir menu"
+              aria-expanded="false"
+              id="menuBtn"
+            >
+              ☰
+            </button>
+            <nav class="main" id="nav">
+              <a href="#start">Diagnóstico</a>
+              <a href="#catalogo">Catálogo</a>
+              <a href="#metodo">Como decidimos</a>
+            </nav>
+          </div>
+        </header>
+
+        <!-- ======================= HERO ======================= -->
+        <section class="hero" id="topo">
+          <span class="orb o1"></span><span class="orb o2"></span>
+          <div class="wrap">
+            <div>
+              <span class="eyebrow">Agent Advisor · Microsoft 2026</span>
+              <h1>
+                Encontre o agente certo — ou a
+                <span class="grad-text">plataforma certa</span> para criar o
+                seu.
+              </h1>
+              <p class="lead">
+                Responda a algumas perguntas e nós o encaminharemos para o local
+                certo para trabalhar com um agente ou para a plataforma
+                Microsoft adequada para criar um.
+              </p>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="#start"
+                  >Começar diagnóstico <span aria-hidden="true">→</span></a
+                >
+                <a class="btn btn-ghost" href="#catalogo"
+                  >Explorar plataformas</a
+                >
+              </div>
+              <p class="meta">
+                Leva cerca de 2 minutos · Pontuação transparente · Resultado
+                exportável
+              </p>
+            </div>
+            <div class="diamond-card">
+              <span class="eyebrow"
+                >Nosso método: Double Diamond + Jobs-to-be-Done</span
+              >
+              <div class="dd" id="heroDD"></div>
+              <div class="dd-legend">
+                <div><b>Descobrir</b>Qual trabalho precisa ser feito?</div>
+                <div><b>Definir</b>Quem constrói e quem usa?</div>
+                <div><b>Desenvolver</b>Canal, tarefa e dados.</div>
+                <div><b>Entregar</b>Plataforma e próximos passos.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= ENTRY ======================= -->
+        <section class="block" id="start">
+          <div class="wrap">
+            <div class="sec-head reveal">
+              <span class="eyebrow">Por onde começar</span>
+              <h2>Qual é o seu ponto de partida?</h2>
+              <p>
+                Escolha a opção que mais se parece com a sua situação. Isso
+                define as perguntas e o tipo de recomendação.
+              </p>
+            </div>
+            <div class="entry-grid">
+              <button class="card c-cyan entry reveal" data-path="use">
+                <div
+                  class="ico-row"
+                  data-icons="m365_copilot,cowork,scout"
+                  aria-hidden="true"
+                ></div>
+                <span class="tag">Usar agentes</span>
+                <h3>Quero o trabalho feito</h3>
+                <p>
+                  Descubra onde trabalhar com um agente pronto: Microsoft 365
+                  Copilot, Copilot Cowork ou Microsoft Scout.
+                </p>
+                <p class="jtbd-hint">
+                  “Quando tenho muito para fazer, quero delegar, para focar no
+                  que importa.”
+                </p>
+                <span class="go">Começar <span>→</span></span>
+              </button>
+              <button class="card entry reveal" data-path="build">
+                <div
+                  class="ico-row"
+                  data-icons="agent_builder,copilot_studio,foundry"
+                  aria-hidden="true"
+                ></div>
+                <span class="tag">Construir agentes</span>
+                <h3>Quero criar um agente sob medida</h3>
+                <p>
+                  Compare Agent Builder, Copilot Studio e Microsoft Foundry com
+                  pontuação de 0 a 15 e regras eliminatórias.
+                </p>
+                <p class="jtbd-hint">
+                  “Quando um processo se repete, quero um agente, para escalar
+                  com governança.”
+                </p>
+                <span class="go">Começar <span>→</span></span>
+              </button>
+              <button class="card c-violet entry reveal" data-path="explore">
+                <div class="ico" aria-hidden="true">🧭</div>
+                <span class="tag">Explorar</span>
+                <h3>Estou conhecendo as opções</h3>
+                <p>
+                  Navegue pelo catálogo de plataformas, caminhos adjacentes e
+                  governança, com cenários ideais de cada um.
+                </p>
+                <p class="jtbd-hint">
+                  “Quando avalio IA, quero o mapa completo, para decidir com
+                  segurança.”
+                </p>
+                <span class="go">Explorar <span>→</span></span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= WIZARD ======================= -->
+        <section class="block" id="wizard" aria-label="Diagnóstico">
+          <div class="wrap">
+            <div class="wiz-top">
+              <div class="wiz-path" id="wizPath"></div>
+              <button class="btn btn-ghost btn-sm" id="restartTop">
+                ↺ Recomeçar
+              </button>
+            </div>
+            <div class="wiz-grid">
+              <div class="panel">
+                <div class="progress" aria-hidden="true">
+                  <i id="progBar"></i>
+                </div>
+                <div id="stepHost" aria-live="polite"></div>
+              </div>
+              <aside class="aside" id="aside"></aside>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= CATALOG ======================= -->
+        <section
+          class="block"
+          id="catalogo"
+          style="background: var(--advisor-white)"
+        >
+          <div class="wrap">
+            <div class="sec-head reveal">
+              <span class="eyebrow">Catálogo</span>
+              <h2>O mapa de agentes da Microsoft hoje</h2>
+              <p>
+                Seis destinos principais, três caminhos adjacentes e a camada de
+                governança. Clique em um card para ver quando usar e quando
+                evitar.
+              </p>
+            </div>
+            <div class="cat-tools">
+              <div class="filters" role="group" aria-label="Filtrar catálogo">
+                <button data-f="all" aria-pressed="true">Todos</button>
+                <button data-f="usar" aria-pressed="false">Usar agentes</button>
+                <button data-f="construir" aria-pressed="false">
+                  Construir agentes
+                </button>
+                <button data-f="adjacente" aria-pressed="false">
+                  Adjacentes &amp; governança
+                </button>
+              </div>
+              <label class="search"
+                ><span class="sr">Buscar no catálogo</span
+                ><input
+                  id="catSearch"
+                  type="search"
+                  placeholder="Buscar: RAG, Teams, sem código…"
+              /></label>
+            </div>
+            <div class="cat-grid" id="catGrid"></div>
+            <p class="empty" id="catEmpty">
+              Nenhuma plataforma corresponde à busca. Tente outro termo.
+            </p>
+          </div>
+        </section>
+
+        <!-- ======================= METHOD ======================= -->
+        <section class="block" id="metodo">
+          <div class="wrap">
+            <div class="sec-head reveal">
+              <span class="eyebrow">Como decidimos</span>
+              <h2>Do trabalho a ser feito à plataforma certa</h2>
+              <p>
+                Usamos o <b>Double Diamond</b> para estruturar a jornada
+                (divergir, convergir, divergir, convergir) e o
+                <b>Jobs-to-be-Done</b> para formular cada pergunta pelo
+                trabalho, não pelo nome do produto.
+              </p>
+            </div>
+            <div class="method-grid">
+              <div class="card c-cyan reveal">
+                <span class="tag">01 · Descobrir</span>
+                <h3>O trabalho</h3>
+                <p>
+                  Formule: “Quando…, quero…, para…”. O resultado esperado vale
+                  mais do que a ferramenta.
+                </p>
+              </div>
+              <div class="card reveal">
+                <span class="tag">02 · Definir</span>
+                <h3>As pessoas</h3>
+                <p>
+                  Quem constrói define o nível de código; quem usa define
+                  alcance e restrições de publicação.
+                </p>
+              </div>
+              <div class="card c-indigo reveal">
+                <span class="tag">03 · Desenvolver</span>
+                <h3>As opções</h3>
+                <p>
+                  Canal, complexidade da tarefa e fontes de dados pontuam cada
+                  plataforma de 0 a 3.
+                </p>
+              </div>
+              <div class="card c-violet reveal">
+                <span class="tag">04 · Entregar</span>
+                <h3>A decisão</h3>
+                <p>
+                  Recomendação, alternativa, placar aberto e um checklist de
+                  ação com links oficiais.
+                </p>
+              </div>
+            </div>
+            <div class="acc reveal">
+              <details>
+                <summary>Como funciona a pontuação?</summary>
+                <p>
+                  Para construir agentes, cinco perguntas valem de 0 a 3 pontos
+                  para Agent Builder, Copilot Studio e Microsoft Foundry (máximo
+                  15). Faixas: <b>12–15 Encaixe forte</b>,
+                  <b>8–11 Bom encaixe</b>, <b>4–7 Encaixe parcial</b>,
+                  <b>0–3 Não recomendado</b>. Se Copilot Studio e Foundry
+                  ficarem a até 2 pontos um do outro, perguntamos quem precisa
+                  operar o runtime.
+                </p>
+              </details>
+              <details>
+                <summary>Quais regras eliminam uma plataforma?</summary>
+                <ul>
+                  <li>
+                    Usuários externos, app próprio, execução em segundo plano,
+                    ações em vários sistemas, Dataverse/APIs ou RAG próprio
+                    eliminam o <b>Agent Builder</b>.
+                  </li>
+                  <li>
+                    Orquestração multiagente ou de longa duração elimina o
+                    <b>Agent Builder</b>.
+                  </li>
+                  <li>
+                    Runtime sob responsabilidade da engenharia elimina
+                    <b>Agent Builder</b> e <b>Copilot Studio</b>: Foundry vence.
+                  </li>
+                </ul>
+              </details>
+              <details>
+                <summary>E para usar agentes prontos?</summary>
+                <p>
+                  Se você quer trabalhar junto, turno a turno, o destino é o
+                  <b>Microsoft 365 Copilot</b> (Chat ou agentes integrados). Se
+                  quer delegar: alcance fora do M365 (desktop, navegador,
+                  arquivos locais) leva ao <b>Microsoft Scout</b>; trabalho
+                  dentro do M365, pontual, recorrente ou contínuo, leva ao
+                  <b>Copilot Cowork</b>. Indecisão em cadência ou alcance mostra
+                  os dois como par complementar.
+                </p>
+              </details>
+              <details>
+                <summary>De onde vêm as regras?</summary>
+                <p>
+                  A lógica segue o modelo público do
+                  <a
+                    href="https://microsoft.github.io/AgentPlatformAdvisor/"
+                    target="_blank"
+                    rel="noopener"
+                    >Agent Platform Advisor</a
+                  >
+                  (versão de jul/2026), adaptada pela NEIVA com o framework
+                  Double Diamond + JTBD, caminhos adjacentes (SharePoint agents,
+                  Agents Toolkit, GitHub Copilot) e governança com Agent 365.
+                  Disponibilidade de recursos em preview/Frontier muda com
+                  frequência: confirme no Microsoft Learn antes de decidir.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================= FOOTER ======================= -->
+        <footer>
+          <div class="wrap">
+            <div>
+              <a
+                class="logo"
+                href="#topo"
+                data-logo="light"
+                aria-label="NEIVA Cloud Solutions"
+              ></a>
+              <p class="tagline" style="margin-top: 14px">
+                Transformando complexidade em conhecimento.
+              </p>
+            </div>
+            <div style="text-align: right">
+              <a
+                class="site"
+                href="https://www.neivacloudsolutions.com/"
+                target="_blank"
+                rel="noopener"
+                >www.neivacloudsolutions.com</a
+              >
+              <p
+                style="
+                  color: var(--advisor-muted);
+                  font-size: 0.9rem;
+                  margin-top: 6px;
+                "
+              >
+                Consultoria em Microsoft Cloud, Copilot e agentes de IA.
+              </p>
+            </div>
+            <p class="fine">
+              Guia orientativo baseado em informações públicas verificadas em
+              out/2026. Microsoft Scout está em Frontier (preview) e exige
+              habilitação do administrador; recursos em preview podem mudar.
+              Microsoft, Microsoft 365, Copilot, Azure e GitHub são marcas da
+              Microsoft Corporation.
+            </p>
+          </div>
+        </footer>
+
+        <div
+          class="modal"
+          id="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mTitle"
+        >
+          <div class="box" id="mBox"></div>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+
+        <!-- =========================================================
+     ENGINE — lógica de pontuação (pura, testável)
+     ========================================================= -->
+
+        <!-- =========================================================
+     UI
+     ========================================================= -->
+      </div>
+    </main>
+    <div data-site-footer></div>
+    <div
+      class="site-status"
+      id="siteStatus"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+  </body>
+</html>

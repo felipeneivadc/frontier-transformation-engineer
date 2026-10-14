@@ -2,15 +2,15 @@
 
 Guias e ferramentas da **NEIVA Cloud Solutions** para transformação agêntica, organizados por plataforma.
 
-**[Abrir o portal](https://felipeneivadc.github.io/frontier-transformation-engineer/)** · [Copilot Studio](https://felipeneivadc.github.io/frontier-transformation-engineer/copilot-studio/) · [Microsoft 365 / Cowork](https://felipeneivadc.github.io/frontier-transformation-engineer/microsoft-365-copilot/) · [Estimador de créditos](https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/calculadora-creditos/)
+**[Abrir o portal](https://felipeneivadc.github.io/frontier-transformation-engineer/)** · [Copilot Studio](https://felipeneivadc.github.io/frontier-transformation-engineer/copilot-studio/) · [Microsoft 365 / Cowork](https://felipeneivadc.github.io/frontier-transformation-engineer/microsoft-365-copilot/) · [Ferramentas e diagnóstico](https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/) · [Estimador de créditos](https://felipeneivadc.github.io/frontier-transformation-engineer/ferramentas/calculadora-creditos/)
 
 ## Recursos
 
-| Área                   | Conteúdo                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------- |
-| Copilot Studio         | Guia interativo de governança, calculadoras Standard e GitHub Copilot Harness, documentação selecionada |
-| Microsoft 365 / Cowork | Calculadora por perfil e intensidade, referências de consumo e administração                            |
-| Estimador unificado    | Seleção de um ou vários produtos, subtotais, faixas, orçamento ilustrativo, comparativo P3 e PDF        |
+| Área                      | Conteúdo                                                                                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Copilot Studio            | Guia interativo de governança, calculadoras Standard e GitHub Copilot Harness, documentação selecionada                                 |
+| Microsoft 365 / Cowork    | Calculadora por perfil e intensidade, referências de consumo e administração                                                            |
+| Ferramentas e diagnóstico | Agent Advisor, AI Discovery Studio e estimador unificado de créditos com subtotais, faixas, orçamento ilustrativo, comparativo P3 e PDF |
 
 O guia inclui cinco pilares, zonas, 15 perguntas de autoavaliação, 31 controles, matriz RACI e quiz. Os hubs distinguem os materiais próprios de fontes externas Microsoft.
 
@@ -24,7 +24,10 @@ docs/                              Site publicado pelo GitHub Pages
     governanca/index.html          Guia educacional
   microsoft-365-copilot/index.html  Hub de Microsoft 365 / Cowork
   ferramentas/
+    index.html                     Hub de ferramentas e diagnóstico
     calculadora-creditos/          Estimador unificado
+    agent-advisor/                 Diagnóstico de uso e construção de agentes
+    ai-discovery-studio/           Oficina local de descoberta e priorização
   assets/
     css/                           Tokens, hubs, guia e estimador
     js/
@@ -83,6 +86,25 @@ Edite `docs/assets/js/catalog.js` para acrescentar um link, descrição, origem 
 Para uma página própria, use uma página do hub como referência, mantenha o cabeçalho e rodapé compartilhados por `site.js`, informe `data-page` e ajuste os caminhos relativos dos assets. Adicione o recurso ao catálogo e aos testes de navegador. Um novo hub também precisa entrar na navegação comum.
 
 Textos dinâmicos do guia ficam em `governance-data.js`; textos e fontes explicativas também existem no HTML. Preserve IDs e posições dos controles indexados para não reinterpretar respostas salvas.
+
+## Ferramentas e diagnóstico
+
+O hub `ferramentas/` concentra experiências interativas que compartilham o
+cabeçalho, rodapé, tema e navegação do portal. Uma nova ferramenta deve entrar
+em `catalog.js`, usar `data-page="tools"`, manter breadcrumb e alternativa sem
+JavaScript, e ter cobertura de navegador para seus fluxos e larguras suportadas.
+
+O **Agent Advisor** compara caminhos para usar ou construir agentes, mantendo a
+pontuação explícita, os links oficiais, a exportação Markdown e o fragmento de
+URL compartilhável. Seus ícones são SVGs neutros locais; não adicione imagens
+remotas para representar plataformas.
+
+O **AI Discovery Studio** é uma oficina local para descoberta, priorização e
+preparação de pilotos. O rascunho no navegador é opcional; importação, backup
+JSON, relatório impresso e cópia HTML interativa dependem da ação explícita da
+pessoa facilitadora. A cópia HTML incorpora a sessão e seus assets para poder
+ser aberta offline. Não inclua dados pessoais sensíveis, credenciais ou
+documentos confidenciais nos registros.
 
 ## Modelos de consumo
 

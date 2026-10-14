@@ -19,7 +19,7 @@
         ["home", "", "Início"],
         ["studio", "copilot-studio/", "Copilot Studio"],
         ["m365", "microsoft-365-copilot/", "Microsoft 365 / Cowork"],
-        ["calculator", "ferramentas/calculadora-creditos/", "Calculadora"],
+        ["tools", "ferramentas/", "Ferramentas"],
       ]
         .map(function (item) {
           return (

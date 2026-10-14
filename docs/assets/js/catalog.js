@@ -17,10 +17,21 @@ export const HUBS = [
     path: "microsoft-365-copilot/",
     icon: "Coworking.png",
   },
+  {
+    id: "tools",
+    title: "Ferramentas e diagnóstico",
+    subtitle: "Descobrir, decidir e planejar",
+    description:
+      "Diagnósticos guiados, oficina de descoberta e estimativas para transformar uma hipótese em próximo passo.",
+    path: "ferramentas/",
+    icon: "logo.png",
+  },
 ];
 export const GROUPS = {
   governance: "Governança e administração",
   estimates: "Calculadoras NEIVA",
+  diagnostics: "Diagnósticos guiados",
+  workshops: "Oficinas e priorização",
   references: "Documentação e ferramentas oficiais",
 };
 export const RESOURCES = [
@@ -129,5 +140,32 @@ export const RESOURCES = [
     description: "Commit units, escopo de compra e custos elegíveis.",
     href: "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3",
     type: "Microsoft Learn",
+  },
+  {
+    hub: "tools",
+    group: "estimates",
+    title: "Estimador de Copilot Credits",
+    description:
+      "Cenários Standard, GitHub Copilot Harness e Cowork em uma estimativa consolidada.",
+    href: "ferramentas/calculadora-creditos/",
+    type: "NEIVA · Calculadora",
+  },
+  {
+    hub: "tools",
+    group: "diagnostics",
+    title: "Agent Advisor",
+    description:
+      "Diagnóstico guiado para escolher como usar ou construir agentes no ecossistema Microsoft.",
+    href: "ferramentas/agent-advisor/",
+    type: "NEIVA · Diagnóstico",
+  },
+  {
+    hub: "tools",
+    group: "workshops",
+    title: "AI Discovery Studio",
+    description:
+      "Oficina local para transformar desafios de negócio em oportunidades, prioridades e experimentos responsáveis.",
+    href: "ferramentas/ai-discovery-studio/",
+    type: "NEIVA · Oficina",
   },
 ];
